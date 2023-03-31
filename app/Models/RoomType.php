@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class RoomType extends Model
 {
     use HasFactory;
+    function Room()
+    {
+        return $this->hasMany(Room::class);
+    }
 }
