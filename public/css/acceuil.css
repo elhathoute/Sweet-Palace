@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Pacifico&family=Poppins:wght@500;600;700;900&family=Righteous&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar-brand, .Sweet{
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 25px;
+}
+.nav-item, footer, body{
+    font-family: 'Poppins', sans-serif;
+}
+#bx1:hover {
+    color: #386bbe;
+    transform: scale(1.5);
+}
+
+#bx2:hover {
+    color: rgb(29, 155, 240);
+    transform: scale(1.5);
+}
+
+#bx3:hover {
+    color: #C13584;
+    transform: scale(1.5);
+}
+
+#bx4:hover {
+    color: red;
+    transform: scale(1.5);
+}
+
+#bx5:hover {
+    color: rgb(16, 199, 16);
+    transform: scale(1.5);
+}
+.row {
+    background-color: white;
+    border-radius: 30px;
+}
+

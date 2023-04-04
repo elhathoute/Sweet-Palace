@@ -1,9 +1,8 @@
-<footer style="background-color:#393E46;">
+<footer style="background-color:#1c1f19;">
     <div class="container mt-5 py-5">
-
         <div class="d-flex justify-content-around mt-5">
             <div class="d-flex flex-column text-white me-4">
-                <p>Sweet Palace</p>
+                <p class="Sweet">Sweet Palace</p>
                 <p class="">We are committed to meeting all of your</p>
                 <p class="">expectations and making your stay </p>
                 <p class="mb-5">as comfortable as possible.</p>
@@ -19,11 +18,11 @@
                 <p class="text-white">© 2023 SWEET PALACE- All rights reserved</p>
             </div>
             <div class="d-flex flex-nowrap justify-content-center">
-                <a href="#" style="color: white;"><i id="bx1" class='bx bxl-facebook fs-1 mx-2'></i></a>
-                <a href="#" style="color: white;"><i id="bx2" class='bx bxl-twitter fs-1 mx-2' ></i></a>
-                <a href="#" style="color: white;"><i id="bx3" class='bx bxl-instagram fs-1 mx-2' ></i></a>
-                <a href="#" style="color: white;"><i id="bx4" class='bx bxl-youtube fs-1 mx-2' ></i></a>
-                <a href="#" style="color: white;"><i id="bx5" class='bx bxl-whatsapp fs-1 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx1" class='bx bxl-facebook fs-3 mx-2'></i></a>
+                <a href="#" style="color: white;"><i id="bx2" class='bx bxl-twitter fs-3 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx3" class='bx bxl-instagram fs-3 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx4" class='bx bxl-youtube fs-3 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx5" class='bx bxl-whatsapp fs-3 mx-2' ></i></a>
             </div>
         </div>
     </div>

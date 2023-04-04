@@ -1,25 +1,25 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg" style="background-color:#565f51;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Sweet Palace</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand text-white ms-3" href="#"><span>Sweet </span><span>Palace</span> </a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                <a class="nav-link active text-white" aria-current="page" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
+                <a class="nav-link text-white" href="#">Gallery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link text-white" href="#">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link text-white" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link text-white" href="#">Contact</a>
             </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -27,13 +27,13 @@
             @guest
                 @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                 @endif
 
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
             @else
