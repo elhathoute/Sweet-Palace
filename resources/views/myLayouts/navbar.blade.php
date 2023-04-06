@@ -16,7 +16,7 @@
                 <a class="nav-link text-white mx-3" href="#">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#">About Us</a>
+                <a class="nav-link text-white mx-3" href="#about">About Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="#">Contact</a>
@@ -33,7 +33,7 @@
 
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link text-white mx-sm-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link text-white ms-sm-3" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
             @else

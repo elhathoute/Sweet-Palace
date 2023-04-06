@@ -1,8 +1,8 @@
-<section id="home" class="banner_wrapper p-0">
+<section id="home" class="banner_wrapper p-0 mb-5">
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide" style="background-image: url('../../images/hotel1.jpg')">
+            <div class="swiper-slide" style="background-image: url('/images/hotel1.jpg')">
                 <div class="slide-caption text-center">
                     <div>
                         <p class="slide-title">Welcome to our hotel</p>
@@ -11,7 +11,7 @@
                     </div>
                  </div>
             </div>
-            <div class="swiper-slide" style="background-image: url('../../images/hotel2.jpg')">
+            <div class="swiper-slide" style="background-image: url('/images/hotel2.jpg')">
                 <div class="slide-caption text-center">
                     <div>
                         <p class="slide-title">Welcome to our hotel </p>
@@ -20,7 +20,7 @@
                     </div>
                  </div>
             </div>
-            <div class="swiper-slide" style="background-image: url('../../images/hotel3.jpg')">
+            <div class="swiper-slide" style="background-image: url('/images/hotel3.jpg')">
                 <div class="slide-caption text-center">
                     <div>
                         <p class="slide-title">Welcome to our hotel </p>
@@ -29,7 +29,7 @@
                     </div>
                  </div>
             </div>
-            <div class="swiper-slide" style="background-image: url('../../images/hotel4.jpg')">
+            <div class="swiper-slide" style="background-image: url('/images/hotel4.jpg')">
                 <div class="slide-caption text-center">
                     <div>
                         <p class="slide-title">Welcome to our hotel</p>
@@ -43,7 +43,7 @@
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
     </div>
-    <div class="container booking-area ">
+    <div class="container booking-area mb-5">
         <form class="row">
             <div class="col-lg mb-3 mb-lg-0">
                 <input type="date" class="form-control" placeholder="Date">
@@ -73,8 +73,8 @@
                     <option value="6">6</option>
                 </select>
             </div>
-            <div class="col-lg mb-3 mb-lg-0 mt-1">
-                <button type="submit" class="main-btn rounded-2 px-lg-3">Check Availability</button>
+            <div class="col-lg mb-3 mb-lg-0">
+                <button type="submit" class="main-btn btn btn-outline-dark rounded-2 px-lg-4 py-lg-2">Check Availability</button>
             </div>
         </form>
     </div>
