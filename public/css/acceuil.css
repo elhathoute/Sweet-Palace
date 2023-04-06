@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Pacifico&family=Poppins:wght@500;600;700;900&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Poppins:wght@500;600;700;900&family=Righteous&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* Navbar Start */
 .navbar-brand, .Sweet{
     font-family: 'Delicious Handrawn', cursive;
     font-size: 25px;
@@ -11,6 +12,95 @@
 .nav-item, footer, body{
     font-family: 'Poppins', sans-serif;
 }
+
+.navbar-toggler{
+    border:0;
+    line-height: 2;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 500;
+    display:inline-block;
+}
+.nav-link:hover,
+.nav-link:active{
+    color: #DAD7CD !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* Navbar End */
+
+/* SLIDE SWIPER START */
+.banner_wrapper{
+    height: 850px;
+    width: 100%;
+}
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.swiper-slide::before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index:0;
+}
+.swiper-pagination-bullet{
+    width:.9375rem;
+    height:.9375rem;
+    background-color:  #DAD7CD;
+    border:1px solid #fff;
+}
+.slide-caption{
+    height:100%;
+    position:relative;
+    z-index:99;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.slide-title{
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 70px;
+    color: #DAD7CD;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.slide-text{
+    font-family: 'Inconsolata', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: #DAD7CD;
+
+}
+.booking-area {
+    background: #fff;
+    box-shadow: 0 10px 15px 0 rgb(0 0 0 / 10%);
+    padding: 50px 30px;
+    position: absolute;
+    top: 860px;
+    left: 280px;
+    z-index: 9;
+    border-radius: 15px;
+}
+/* SLIDE SWIPER END */
 #bx1:hover {
     color: #386bbe;
     transform: scale(1.5);
@@ -39,4 +129,5 @@
     background-color: white;
     border-radius: 30px;
 }
+
 
