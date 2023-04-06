@@ -32,6 +32,14 @@
     font-size: 18px;
     font-weight: 600;
 }
+.header-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    animation: 500ms ease-in-out 0s normal none 1 running faceInDown;
+}
 /* Navbar End */
 
 /* SLIDE SWIPER START */
@@ -95,10 +103,69 @@
     box-shadow: 0 10px 15px 0 rgb(0 0 0 / 10%);
     padding: 50px 30px;
     position: absolute;
-    top: 860px;
+    top: 800px;
     left: 280px;
     z-index: 9;
     border-radius: 15px;
+}
+.form-control, .form-select{
+    border:1px solid black;
+    height: 40px;;
+    text-transform: uppercase;
+    font-size: 14px;
+    color:black;
+    font-weight: 500;
+}
+.form-control:focus, .form-select:focus {
+    outline: none;
+    box-shadow: none;
+}
+.main-btn {
+    background-color: #565f51;
+    color: #fff;
+    border: none;
+}
+@media (max-width: 1199px) {
+
+    .main-btn{
+        font-size:14px;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    /* booking area */
+    .booking-area{
+        padding:48px 10px;
+    }
+}
+@media (max-width: 991px) {
+
+    .slide-title{
+        font-size: 36px;
+    }
+    .slide-text{
+        font-size: 15px;
+    }
+    .main-btn{
+        width: 100%;
+
+    }
+    /* booking area */
+    .banner_wrapper{
+        height: 410px;
+    }
+    .booking-area{
+        padding: 50px 30px;
+        left: 110px;
+        top: 460px;
+    }
+}
+@media (max-width : 896px) {
+    .booking-area{
+        padding: 50px 30px;
+        left: 0px;
+        top: 460px;
+    }
+
 }
 /* SLIDE SWIPER END */
 #bx1:hover {
@@ -129,5 +196,23 @@
     background-color: white;
     border-radius: 30px;
 }
+/* about section start*/
+.about_wrapper{
+    margin-top: 150px;
+}
+.about-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 33px;
+    font-weight: bolder;
 
+}
+.about-sous-title{
+    color: #E14D2A;
+}
+.about-text{
+    font-family: 'Inconsolata', monospace;
+    font-size:  20px;
+    font-weight: bolder;
+}
+/* about section end*/
 
