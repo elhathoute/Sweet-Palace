@@ -30,6 +30,10 @@
     </div>
 
     <div>
+        @include('myLayouts.rooms')
+    </div>
+
+    <div>
         @include('myLayouts.footer')
     </div>
 

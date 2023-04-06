@@ -1,4 +1,4 @@
-<section id="about" class="about_wrapper">
+<section id="about" class="about_wrapper mb-4">
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-lg-6 text-center text-lg-start">
