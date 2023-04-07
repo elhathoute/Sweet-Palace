@@ -6,5 +6,11 @@
     "detect-css-reflows/layout": "off",
     "detect-css-reflows/composite": "off",
     "detect-css-reflows/paint": "off"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 110",
+    "not firefox <= 111"
+  ]
 }

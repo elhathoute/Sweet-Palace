@@ -7,51 +7,40 @@
                 <hr class="line">
             </div>
         </div>
-        <div class="row m-0">
-            <div class="col-md-4 mb-4 mb-lg-0">
-                <div class="room-items">
-                    <img src="{{asset('/images/royalSuit.jpg')}}" class="room img-fluid" alt="">
-                </div>
-                <div class="room-item-wrap">
-                    <div class="room-content">
-                        <h5 class="text-black mb-lg-3 text-decoration-underline">Royal Suit</h5>
-                        <p class="text-black"> Discover Five of our Favorite dresses </p>
-                        <p class="text-black">from our new collection that destined</p>
-                        <p class="text-black">to be worn and loved Immediately.</p>
-                        <p class="text-black fw-bold my-lg-4"> 220 euro / per night</p>
-                        <a class="main-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
+        <div class="row m-0 d-flex align-items-center justify-content-around">
+            <div class="card col-md-4 mb-4 mb-lg-0">
+                <img src="{{asset('/images/royalSuit.jpg')}}" class="room img-fluid" alt="">
+                    <div class="card-content">
+                        <h2 class="card-title text-white mb-lg-3">Royal Suit</h2>
+                        <p class="card-text text-white"> Discover Five of our Favorite dresses </p>
+                        <p class="card-text text-white">from our new collection that destined</p>
+                        <p class="card-text text-white">to be worn and loved Immediately.</p>
+                        <p class="card-text text-white fw-bold mt-lg-4 fs-5"> 220 euro / per night</p>
+                        <a class="card-link book-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-4 mb-4 mb-lg-0">
-                <div class="room-items">
-                    <img src="{{asset('/images/double.jpg')}}" class="room img-fluid" alt="">
-                </div>
-                <div class="room-item-wrap">
-                    <div class="room-content">
-                        <h5 class="text-black mb-lg-3 text-decoration-underline">Double Room</h5>
-                        <p class="text-black"> Discover Five of our Favorite dresses </p>
-                        <p class="text-black">from our new collection that destined</p>
-                        <p class="text-black">to be worn and loved Immediately.</p>
-                        <p class="text-black fw-bold my-lg-4"> 220 euro / per night</p>
-                        <a class="main-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
+            <div class="card col-md-4 mb-4 mb-lg-0">
+                <img src="{{asset('/images/double.jpg')}}" class="room img-fluid" alt="">
+                    <div class="card-content">
+                        <h2 class="card-title text-white mb-lg-3">Double Room</h2>
+                        <p class="card-text text-white"> Discover Five of our Favorite dresses </p>
+                        <p class="card-text text-white">from our new collection that destined</p>
+                        <p class="card-text text-white">to be worn and loved Immediately.</p>
+                        <p class="card-text text-white fw-bold mt-lg-4 fs-5"> 220 euro / per night</p>
+                        <a class="card-link book-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
                     </div>
-                </div>
             </div>
-            <div class="col-md-4 mb-4 mb-lg-0">
-                <div class="room-items">
-                    <img src="{{asset('/images/single.jpg')}}" class="room img-fluid" alt="">
+            <div class="card col-md-4 mb-4 mb-lg-0">
+                <img src="{{asset('/images/single.jpg')}}" class="room img-fluid" alt="">
+                <div class="card-content">
+                    <h2 class="card-title text-white mb-lg-3">Single Room</h2>
+                    <p class="card-text text-white"> Discover Five of our Favorite dresses </p>
+                    <p class="card-text text-white">from our new collection that destined</p>
+                    <p class="card-text text-white">to be worn and loved Immediately.</p>
+                    <p class="card-text text-white fw-bold mt-lg-4 fs-5"> 220 euro / per night</p>
+                    <a class="card-link book-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
                 </div>
-                <div class="room-item-wrap">
-                    <div class="room-content">
-                        <h5 class="text-black mb-lg-3 text-decoration-underline">Single Room</h5>
-                        <p class="text-black"> Discover Five of our Favorite dresses </p>
-                        <p class="text-black">from our new collection that destined</p>
-                        <p class="text-black">to be worn and loved Immediately.</p>
-                        <p class="text-black fw-bold my-lg-4"> 220 euro / per night</p>
-                        <a class="main-btn text-decoration-none btn-outline-dark rounded-2 px-lg-4 py-lg-2" href="">Book Now</a>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
