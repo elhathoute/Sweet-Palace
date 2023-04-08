@@ -27,7 +27,7 @@
     display:inline-block;
 }
 .nav-link:hover,
-.nav-link:active{
+.nav-link.active{
     color: #DAD7CD !important;
     font-size: 18px;
     font-weight: 600;
@@ -223,7 +223,7 @@
     font-weight: bolder;
 }
 .line{
-    width: 20%;
+    width: 600px;
     margin: auto;
     border: 1px solid black;
 }
@@ -311,4 +311,49 @@
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
 }
 /* rooms section end */
-
+/* services section start */
+.service-item-wrap{
+    background-color: #ebeae6;
+    border-radius: 0%;
+}
+.service-link{
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: black;
+}
+.service-icon{
+    text-align: center;
+    border-radius: 100%;
+    background-color:#e0a698;
+    float: left;
+    transition: all 0.3s ease-in-out;
+}
+.service-icon:hover, .service-link.active .service-icon{
+    background-color: rgb(156, 176, 142);
+    box-shadow: 0 2px rgb(34 30 31 / 40%);
+}
+.service-menu-area ul li:nth-child(1){
+    margin-left: 9px;
+}
+.service-menu-area ul li:nth-child(2){
+    margin-left: -47px;
+}
+.service-menu-area ul li:nth-child(3){
+    margin-left: -100px;
+}
+.service-menu-area ul li:nth-child(4){
+    margin-left: -141px;
+}
+.service-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    color: #0b0a34;
+    font-weight: 700;
+}
+.service-title, .service-text{
+    padding-left: 30px;
+    display: block;
+    text-align: left;
+}
+/* services section end */
