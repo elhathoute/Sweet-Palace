@@ -10,13 +10,16 @@
                 <a class="nav-link active text-white mx-3" aria-current="page" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#">Gallery</a>
+                <a class="nav-link text-white mx-3" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mx-3" href="#rooms">Rooms</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="#">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#about">About Us</a>
+                <a class="nav-link text-white mx-3" href="#">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="#">Contact</a>

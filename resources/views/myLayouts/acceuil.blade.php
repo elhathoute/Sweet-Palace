@@ -34,6 +34,10 @@
     </div>
 
     <div>
+        @include('myLayouts.services')
+    </div>
+
+    <div>
         @include('myLayouts.footer')
     </div>
 
