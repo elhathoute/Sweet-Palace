@@ -12,7 +12,8 @@ class RoomTypeController extends Controller
      */
     public function index()
     {
-        return view('roomType.index');
+        $data = RoomType::all();
+        return view('roomType.index', ['data' => $data]);
     }
 
     /**
@@ -26,9 +27,15 @@ class RoomTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, RoomType $roomType)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'detail' => 'required|string',
+        ]);
+        $roomType->create($data);
+
+        return redirect()->route('roomType.create')->with('Sucssess ! Room Type has been Added Successfully.');
     }
 
     /**
@@ -36,7 +43,8 @@ class RoomTypeController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = RoomType::find($id);
+        return view('roomType.show')->with('data', $data);
     }
 
     /**
@@ -44,7 +52,8 @@ class RoomTypeController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = RoomType::find($id);
+        return view('roomType.edit')->with('data', $data);
     }
 
     /**
@@ -52,7 +61,22 @@ class RoomTypeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $roomType = RoomType::findOrFail($id);
+
+        $request->validate([
+            'title' => 'required',
+            'detail' => 'required',
+        ], [
+            'title.required' => 'Please enter a valid title for the room !',
+            'detail.required' => 'Please enter the room details!',
+        ]);
+
+        $roomType->update([
+            'title' => $request->title,
+            'detail' => $request->detail,
+        ]);
+
+        return redirect()->route('roomType.edit', $id)->with('success', 'The room Type has been updated successfully.');
     }
 
     /**
@@ -60,6 +84,8 @@ class RoomTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $roomType = RoomType::findOrFail($id);
+        $roomType->delete();
+        return redirect('/roomType')->with('Success', "The room type '$roomType->title' has been deleted successfully.");
     }
 }
