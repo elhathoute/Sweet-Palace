@@ -17,6 +17,9 @@ use App\Http\Controllers\RoomTypeController;
 Route::get('/', function () {
     return view('myLayouts/acceuil');
 });
+Route::get('/dashboard', function () {
+    return view('myLayouts/dashboard');
+});
 
 Auth::routes();
 
