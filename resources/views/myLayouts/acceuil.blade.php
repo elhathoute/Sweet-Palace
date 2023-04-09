@@ -38,6 +38,10 @@
     </div>
 
     <div>
+        @include('myLayouts.gallery')
+    </div>
+
+    <div>
         @include('myLayouts.footer')
     </div>
 

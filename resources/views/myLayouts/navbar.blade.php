@@ -16,7 +16,7 @@
                 <a class="nav-link text-white mx-3" href="#rooms">Rooms</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#">Services</a>
+                <a class="nav-link text-white mx-3" href="#services">Services</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="#">Gallery</a>

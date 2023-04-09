@@ -29,3 +29,4 @@ var swiper = new Swiper(".mySwiper", {
         delay: 3500,
     },
 });
+
