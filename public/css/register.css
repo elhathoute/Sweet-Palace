@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Poppins:wght@500;600;700;900&family=Righteous&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navbar Start */
+.navbar-brand, .Sweet{
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 25px;
+}
+.nav-item, footer, body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-toggler{
+    border:0;
+    line-height: 2;
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.nav-item .nav-link{
+    font-size: 16px;
+    font-weight: 500;
+    display:inline-block;
+}
+.nav-link:hover,
+.nav-link.active{
+    color: #DAD7CD !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+.header-scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9;
+    animation: 500ms ease-in-out 0s normal none 1 running faceInDown;
+}
