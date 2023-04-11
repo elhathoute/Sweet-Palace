@@ -25,4 +25,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('admin/roomType',RoomTypeController::class);
+Route::resource('/myLayouts/roomType',RoomTypeController::class);
