@@ -38,7 +38,7 @@
                 </li>
 
                 <li class="dropdown">
-                    <a href="{{url('myLayouts/index')}}">
+                    <a href="{{url('myLayouts/roomType')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-category' ></i>
                         </span>
