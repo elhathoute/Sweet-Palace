@@ -2,7 +2,7 @@
 @extends('myLayouts.dashboard')
 @section('content')
 <div class="mt-3 d-flex justify-content-end">
-    <a href="{{url('myLayouts/roomType')}}" class="text-decoration-none btn btn-success">View All</a>
+    <a href="{{url('myLayouts/roomType')}}" class="text-decoration-none btn btn-outline-dark">Return</a>
 </div>
 <div class="card my-5 rounded-3" style="height: 500px">
     <div class="row g-0">
