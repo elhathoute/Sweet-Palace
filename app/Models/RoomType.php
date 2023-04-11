@@ -9,7 +9,7 @@ class RoomType extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','detail'
+        'title','detail','price','image_path'
     ];
     function Room()
     {
