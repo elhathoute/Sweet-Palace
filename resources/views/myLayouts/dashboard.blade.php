@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
     <title>Dashboard</title>
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="{{asset('/css/dashboard.css')}}">
@@ -13,7 +16,7 @@
 
 <body>
     <!-- =============== Navigation ================ -->
-    <div class="container">
+    <div class="containerr">
         <div class="navigation">
             <ul>
                 <li>
@@ -34,8 +37,8 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
+                <li class="dropdown">
+                    <a href="{{url('myLayouts/index')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-category' ></i>
                         </span>
@@ -111,10 +114,10 @@
 
             <!-- ======================= Cards ================== -->
             <div class="cardBox">
-                <div class="card">
+                <div class="carde">
                     <div>
                         <div class="numbers">0</div>
-                        <div class="cardName">Statistics</div>
+                        <div class="cardeName">Statistics</div>
                     </div>
 
                     <div class="iconBx">
@@ -122,10 +125,10 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="carde">
                     <div>
                         <div class="numbers">0</div>
-                        <div class="cardName">Statistics</div>
+                        <div class="cardeName">Statistics</div>
                     </div>
 
                     <div class="iconBx">
@@ -133,10 +136,10 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="carde">
                     <div>
                         <div class="numbers">0</div>
-                        <div class="cardName">Statistics</div>
+                        <div class="cardeName">Statistics</div>
                     </div>
 
                     <div class="iconBx">
@@ -144,10 +147,10 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="carde">
                     <div>
                         <div class="numbers">0</div>
-                        <div class="cardName">Statistics</div>
+                        <div class="cardeName">Statistics</div>
                     </div>
 
                     <div class="iconBx">
@@ -155,11 +158,14 @@
                     </div>
                 </div>
             </div>
-
+            
+            <div class="roomType">
+                @yield('content')
+             </div>
             <!-- ================ Order Details List ================= -->
             {{-- <div class="details">
                 <div class="recentOrders">
-                    <div class="cardHeader">
+                    <div class="cardeHeader">
                         <h2>Recent Orders</h2>
                         <a href="#" class="btn">View All</a>
                     </div>
@@ -317,12 +323,20 @@
             </div>
         </div>
     </div> --}}
+    <!------------- dataTable------------>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () { $('#example').DataTable(); });
+
+    </script>
 
     <!-- =========== Scripts =========  -->
     <script src="{{asset('/js/dash.js')}}"></script>
 
     <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
