@@ -20,7 +20,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{{url('/dashboard')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-castle'></i>
                         </span>
@@ -29,7 +29,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{url('/dashboard')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-home-alt-2'></i>
                         </span>
@@ -158,7 +158,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="roomType">
                 @yield('content')
              </div>
