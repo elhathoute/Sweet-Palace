@@ -7,7 +7,7 @@
 <div class="card my-5 rounded-3" style="height: 500px">
     <div class="row g-0">
       <div class="col-md-5">
-        <img src="{{$data->image_path}}" class="img-fluid" alt="...">
+        <img src="{{asset($data->image_path)}}" class="img-fluid" alt="...">
       </div>
       <div class="col-md-7 py-3 my-auto">
         <div class="card-body py-3">
@@ -17,5 +17,5 @@
         </div>
       </div>
     </div>
-</div> 
+</div>
 @endsection
