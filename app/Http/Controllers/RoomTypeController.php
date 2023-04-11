@@ -32,10 +32,12 @@ class RoomTypeController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'detail' => 'required|string',
+            'price'=>'required',
+            'image_path'=>'required'
         ]);
         $roomType->create($data);
 
-        return redirect()->route('myLayouts.roomType.create')->with('Sucssess ! Room Type has been Added Successfully.');
+        return redirect()->route('myLayouts.roomType.create')->with('success','Room Type has been Added Successfully.');
     }
 
     /**
