@@ -13,7 +13,7 @@ class RoomTypeController extends Controller
     public function index()
     {
         $data = RoomType::all();
-        return view('roomType.index', ['data' => $data]);
+        return view('myLayouts.roomType.index', ['data' => $data]);
     }
 
     /**
@@ -21,7 +21,7 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return view('roomType.create');
+        return view('myLayouts.roomType.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class RoomTypeController extends Controller
         ]);
         $roomType->create($data);
 
-        return redirect()->route('roomType.create')->with('Sucssess ! Room Type has been Added Successfully.');
+        return redirect()->route('myLayouts.roomType.create')->with('Sucssess ! Room Type has been Added Successfully.');
     }
 
     /**
@@ -44,7 +44,7 @@ class RoomTypeController extends Controller
     public function show(string $id)
     {
         $data = RoomType::find($id);
-        return view('roomType.show')->with('data', $data);
+        return view('myLayouts.roomType.show')->with('data', $data);
     }
 
     /**
@@ -53,7 +53,7 @@ class RoomTypeController extends Controller
     public function edit(string $id)
     {
         $data = RoomType::find($id);
-        return view('roomType.edit')->with('data', $data);
+        return view('myLayouts.roomType.edit')->with('data', $data);
     }
 
     /**
@@ -76,7 +76,7 @@ class RoomTypeController extends Controller
             'detail' => $request->detail,
         ]);
 
-        return redirect()->route('roomType.edit', $id)->with('success', 'The room Type has been updated successfully.');
+        return redirect()->route('myLayouts.roomType.edit', $id)->with('success', 'The room Type has been updated successfully.');
     }
 
     /**
@@ -86,6 +86,6 @@ class RoomTypeController extends Controller
     {
         $roomType = RoomType::findOrFail($id);
         $roomType->delete();
-        return redirect('/roomType')->with('Success', "The room type '$roomType->title' has been deleted successfully.");
+        return redirect('myLayouts/roomType')->with('Success', "The room type '$roomType->title' has been deleted successfully.");
     }
 }
