@@ -29,15 +29,34 @@ class RoomTypeController extends Controller
      */
     public function store(Request $request, RoomType $roomType)
     {
-        $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'detail' => 'required|string',
+        $request->validate([
+            'title'=>'required',
+            'detail'=>'required',
             'price'=>'required',
-            'image_path'=>'required'
+            'image_path'=>'required|mimes:jpg,png,jpeg',
+        ],[
+            'title.required' => 'Please enter a valid name for the dish !',
+            'detail.required' => 'Please enter the price !',
+            'price.required' => 'Enter a Category !',
+            'image_path.required' => 'Please select an image !',
         ]);
-        $roomType->create($data);
 
-        return redirect()->route('myLayouts.roomType.create')->with('success','Room Type has been Added Successfully.');
+        $room_image = $request->file('image_path');
+        $name_generate = hexdec(uniqid());
+        $img_extension = strtolower($room_image->getClientOriginalExtension());
+        $img_name = $name_generate.'.'.$img_extension;
+        $location = 'images/';
+        $last_img = $location.$img_name;
+        $room_image->move($location,$img_name);
+
+        RoomType::create([
+            'title'=>$request->title,
+            'detail'=>$request->detail,
+            'price'=>$request->price,
+            'image_path'=> $last_img,
+        ]);
+        return redirect('/myLayouts/roomType')->with('success','Room Type has been created successfully.');
+
     }
 
     /**
@@ -63,22 +82,36 @@ class RoomTypeController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $roomType = RoomType::findOrFail($id);
+        $data = RoomType::find($id);
+        if($request->hasFile('image_path')){
+            $room_image = $request->file('image_path');
+            $name_generate = hexdec(uniqid());
+            $img_extension = strtolower($room_image->getClientOriginalExtension());
+            $img_name = $name_generate.'.'.$img_extension;
+            $location = 'images/';
+            $last_img = $location.$img_name;
+            $room_image->move($location,$img_name);
+            $data->update([
+                'image_path'=> $last_img,
+            ]);
 
+        }
         $request->validate([
-            'title' => 'required',
-            'detail' => 'required',
-        ], [
-            'title.required' => 'Please enter a valid title for the room !',
-            'detail.required' => 'Please enter the room details!',
+            'title'=>'required',
+            'detail'=>'required',
+            'price'=>'required',
+        ],[
+            'title.required' => 'Please enter a valid Room Title !',
+            'detail.required' => 'Please enter the Details for the Room !',
+            'price.required' => 'Enter a Room price !',
         ]);
-
-        $roomType->update([
-            'title' => $request->title,
-            'detail' => $request->detail,
+        $data->update([
+            'title'=>$request->title,
+            'detail'=>$request->detail,
+            'price'=>$request->price,
         ]);
-
-        return redirect()->route('myLayouts.roomType.edit', $id)->with('success', 'The room Type has been updated successfully.');
+        // return redirect('/myLayouts/roomType')->with('success','RoomType Has Been updated successfully');
+        return redirect('myLayouts/roomType/'.$id.'/edit')->with('success', 'The room Type has been updated successfully.');
     }
 
     /**
@@ -86,8 +119,7 @@ class RoomTypeController extends Controller
      */
     public function destroy(string $id)
     {
-        $roomType = RoomType::findOrFail($id);
-        $roomType->delete();
-        return redirect('myLayouts/roomType')->with('Success', "The room type '$roomType->title' has been deleted successfully.");
+        $data = RoomType::destroy($id);
+        return redirect('myLayouts/roomType')->with('success1', "The room type has been deleted successfully.");
     }
 }
