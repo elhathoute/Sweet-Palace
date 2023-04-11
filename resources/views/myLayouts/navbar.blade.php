@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg" style="background-color:#565f51;">
     <div class="container-fluid">
-        <a class="navbar-brand text-white ms-3" href="#"><span>Sweet </span><span>Palace</span> </a>
+        <a class="navbar-brand text-white ms-3" href="{{ url('/') }}"><span>Sweet </span><span>Palace</span> </a>
         <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class='bx bx-menu-alt-right'></i>
         </button>
