@@ -259,7 +259,7 @@ body {
 }
 /* table RoomTypes */
 .roomType{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
