@@ -41,7 +41,7 @@
                                     <form action="{{ url('myLayouts/roomType'. '/'.$d->id)}}" method="POST">
                                         @csrf
                                         @method("DELETE")
-                                        <button class="btn btn-danger btn-sm me-3"><i class='bx bxs-trash' ></i></button>
+                                        <button onclick="return confirm('Are you sure to delete thi Room Type ?')" class="btn btn-danger btn-sm me-3"><i class='bx bxs-trash' ></i></button>
                                     </form>
                                 </td>
                             </tr>
