@@ -55,14 +55,14 @@
                     </a>
                 </li>
 
-                {{-- <li>
-                    <a href="#">
+                <li>
+                    <a href="{{url('myLayouts/admins')}}">
                         <span class="icon">
-                            <ion-icon name="help-outline"></ion-icon>
+                            <i class='ion-icon bx bx-dialpad'></i>
                         </span>
-                        <span class="title">Help</span>
+                        <span class="title">Admins</span>
                     </a>
-                </li> --}}
+                </li>
 
                 {{-- <li>
                     <a href="#">
