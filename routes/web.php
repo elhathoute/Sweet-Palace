@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -29,3 +30,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
 Route::resource('/myLayouts/rooms',RoomController::class);
+Route::resource('/myLayouts/admins', AdminController::class);
