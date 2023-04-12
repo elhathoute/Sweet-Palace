@@ -47,7 +47,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{url('myLayouts/rooms')}}">
                         <span class="icon">
                             <i class='ion-icon bx bx-registered' ></i>
                         </span>
