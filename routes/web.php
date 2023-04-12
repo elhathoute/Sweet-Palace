@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
+use App\Http\Controllers\RoomController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
+Route::resource('/myLayouts/rooms',RoomController::class);
