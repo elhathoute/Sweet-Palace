@@ -4,7 +4,7 @@
 <div class="mt-3 d-flex justify-content-end">
     <a href="{{url('myLayouts/roomType')}}" class="text-decoration-none btn btn-outline-dark">Return</a>
 </div>
-<div class="card my-5 rounded-3" style="height: 500px">
+<div class="card my-5 rounded-3" style="">
     <div class="row g-0">
       <div class="col-md-5">
         <img src="{{asset($data->image_path)}}" class="img-fluid" alt="...">

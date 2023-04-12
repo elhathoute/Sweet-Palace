@@ -22,7 +22,7 @@
                         <th class="text-center">Title</th>
                         <th class="text-center">Detail</th>
                         <th class="text-center">Price</th>
-                        <th class="text-center">Image</th>
+                        <th class="text-center">Cover</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -54,7 +54,7 @@
                         <th>Title</th>
                         <th>Detail</th>
                         <th>Price</th>
-                        <th>Image</th>
+                        <th>Cover</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
