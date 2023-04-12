@@ -266,16 +266,19 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.gradient-custom {
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
+}
 
 /* ================== Order Details List ============== */
-.details {
+/* .details {
   position: relative;
   width: 100%;
   padding: 20px;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
-  /* margin-top: 10px; */
+  margin-top: 10px;
 }
 
 .details .recentOrders {
@@ -412,7 +415,7 @@ body {
 }
 .recentCustomers table tr:hover td h4 span {
   color: var(--white);
-}
+} */
 
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {
@@ -435,7 +438,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .details {
     grid-template-columns: 1fr;
   }
@@ -445,7 +448,7 @@ body {
   .status.inProgress {
     white-space: nowrap;
   }
-}
+} */
 
 @media (max-width: 480px) {
   .cardBox {
