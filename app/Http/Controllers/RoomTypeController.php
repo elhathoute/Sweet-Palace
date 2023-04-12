@@ -35,9 +35,9 @@ class RoomTypeController extends Controller
             'price'=>'required',
             'image_path'=>'required|mimes:jpg,png,jpeg',
         ],[
-            'title.required' => 'Please enter a valid name for the dish !',
-            'detail.required' => 'Please enter the price !',
-            'price.required' => 'Enter a Category !',
+            'title.required' => 'Please enter a valid name for the Room Type !',
+            'detail.required' => 'Please enter the details !',
+            'price.required' => 'Enter a valid price !',
             'image_path.required' => 'Please select an image !',
         ]);
 
@@ -110,7 +110,6 @@ class RoomTypeController extends Controller
             'detail'=>$request->detail,
             'price'=>$request->price,
         ]);
-        // return redirect('/myLayouts/roomType')->with('success','RoomType Has Been updated successfully');
         return redirect('myLayouts/roomType/'.$id.'/edit')->with('success', 'The room Type has been updated successfully.');
     }
 
