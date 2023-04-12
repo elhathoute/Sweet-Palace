@@ -32,7 +32,7 @@
                     <div class="priceError"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Image</label>
+                    <label for="image" class="form-label">Cover</label>
                     <input type="file" class="form-control" id="image" name="image_path" value="{{$data->image_path}}">
                     <div class="imageError"></div>
                 </div>
