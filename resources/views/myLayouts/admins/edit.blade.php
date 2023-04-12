@@ -20,6 +20,7 @@
                 <div class="mb-3">
                     <label for="picture" class="form-label">Picture</label>
                     <input type="file" class="form-control" id="picture" name="picture" value="{{$admin->picture}}">
+                    <img src="{{asset($admin->picture)}}" alt="">
                     @error('picture')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
