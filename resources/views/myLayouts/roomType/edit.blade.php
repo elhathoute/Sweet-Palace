@@ -7,7 +7,7 @@
     @endif
     <div class="card shadow my-5">
         <div class="card-header py-3 d-flex align-items-center justify-content-between">
-            <h6 class="m-0 fw-bold">Add RoomType</h6>
+            <h6 class="m-0 fw-bold">Update RoomType</h6>
             <a href="{{url('myLayouts/roomType')}}" class="text-decoration-none btn btn-success">View All</a>
         </div>
 
