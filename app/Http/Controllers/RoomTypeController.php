@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\RoomType;
 
@@ -40,7 +41,7 @@ class RoomTypeController extends Controller
             'price.required' => 'Enter a valid price !',
             'image_path.required' => 'Please select an image !',
         ]);
-
+        //cover image
         $room_image = $request->file('image_path');
         $name_generate = hexdec(uniqid());
         $img_extension = strtolower($room_image->getClientOriginalExtension());
@@ -49,12 +50,14 @@ class RoomTypeController extends Controller
         $last_img = $location.$img_name;
         $room_image->move($location,$img_name);
 
-        RoomType::create([
+
+        $roomType = RoomType::create([
             'title'=>$request->title,
             'detail'=>$request->detail,
             'price'=>$request->price,
             'image_path'=> $last_img,
         ]);
+
         return redirect('/myLayouts/roomType')->with('success','Room Type has been created successfully.');
 
     }
@@ -119,6 +122,6 @@ class RoomTypeController extends Controller
     public function destroy(string $id)
     {
         $data = RoomType::destroy($id);
-        return redirect('myLayouts/roomType')->with('success1', "The room type has been deleted successfully.");
+        return redirect('myLayouts/roomType')->with('success', "The room type has been deleted successfully.");
     }
 }
