@@ -25,12 +25,11 @@
                 </thead>
                 <tbody>
                     @if($rooms)
-                        @foreach ($rooms as $r)
+                        @foreach ($rooms as $r )
                             <tr>
                                 <td>{{$r->id}}</td>
                                 <td class="text-truncate" style="max-width: 30px">{{$r->title}}</td>
-                                <td class="text-truncate" style="max-width: 30px"> {{$d->detail}}</td>
-                                <td value="{{$r->roomType_id}}">{{$r->title}}</td>
+                                <td value="">{{$r->RoomType->title}}</td>
                                 <td class="d-flex justify-content-center">
                                     <a href="{{url('myLayouts/rooms/'.$r->id)}}" class="btn btn-sm me-3" style="color: white; background-color:#070A52;"><i class='bx bxs-show'></i></a>
                                     <a href="{{url('myLayouts/rooms/'.$r->id.'/edit')}}" class="btn btn-success btn-sm me-3"><i class='bx bxs-edit' ></i></a>
@@ -46,10 +45,10 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Room Type</th>
-                        <th>Action</th>
+                        <th class="text-center">Id</th>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Room Type</th>
+                        <th class="text-center">Action</th>
                     </tr>
                 </tfoot>
             </table>
