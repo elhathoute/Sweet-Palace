@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     {{-- CSS Links--}}
     <link href="{{asset('/css/acceuil.css')}}" rel="stylesheet">
+    
     <title>Sweet Palace</title>
 </head>
 <body>
@@ -40,7 +41,8 @@
     <div>
         @include('myLayouts.gallery')
     </div>
-
+    
+   
     <div>
         @include('myLayouts.footer')
     </div>
