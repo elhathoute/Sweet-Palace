@@ -13,7 +13,7 @@
                 <a class="nav-link text-white mx-3" href="#about">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#rooms">Rooms</a>
+                <a class="nav-link text-white mx-3" href="{{ url('/rooms') }}">Rooms</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="#services">Services</a>

@@ -42,13 +42,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
-                {{-- <div class="mb-3">
-                    <label for="imgs" class="form-label">Images</label>
-                    <input type="file" class="form-control" id="" name="imgs[]" multiple>
-                    @error('imgs')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div> --}}
+              
                 <button type="submit" class="btn btn-primary my-4">Submit</button>
             </form>
 
