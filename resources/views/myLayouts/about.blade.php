@@ -20,7 +20,7 @@
                 <p class="about-text mb-4">
                     elegance and sophistication.
                 </p>
-                <a href="#" class="main-btn btn-outline-dark rounded-2 px-lg-4 py-lg-2 text-decoration-none"> Explore More</a>
+                <a href="{{url('/about')}}" class="main-btn btn-outline-dark rounded-2 px-lg-4 py-lg-2 text-decoration-none"> Explore More</a>
             </div>
             <div class="col-lg-6 mb-4 mb-lg-0 ps-1g-4 text-center">
                 <img src="{{asset('/images/Hello.gif')}}" alt="hello" class="img-fluid">
