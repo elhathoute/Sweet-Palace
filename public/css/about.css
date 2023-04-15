@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Delicious+Handrawn&family=Inconsolata:wght@300;400;500;600;700;800;900&family=Oswald:wght@200;300;400;500;600;700&family=Pacifico&family=Poppins:wght@500;600;700;900&family=Righteous&display=swap');
+* { 
+    box-sizing: border-box;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+.main-wrapper { 
+    position: relative;
+} 
+
+.section { 
+    padding-top: 100px; 
+    padding-bottom: 60px;
+} 
+
+.container { 
+    margin-right: auto; 
+    margin-left: auto;
+} 
+
+@media (min-width: 576px){ 
+    .container { 
+    max-width: 540px;
+    } 
+}     
+
+@media (min-width: 768px){ 
+    .container { 
+    max-width: 720px;
+    } 
+}     
+
+@media (min-width: 992px){ 
+    .container { 
+    max-width: 960px;
+    } 
+}     
+
+@media (min-width: 1200px){ 
+    .container { 
+    max-width: 1140px;
+    } 
+}     
+
+@media (min-width: 1400px){ 
+    .container { 
+    max-width: 1320px;
+    } 
+}     
+
+.about-thumb-wrapper { 
+    display:  flex; 
+    flex-wrap:  wrap;
+    margin: -15px;
+}   
+
+.section-header { 
+    margin-bottom: 45px;
+} 
+
+.about-thumb-wrapper .about-thumb { 
+    width: 50%; 
+    height: 260px; 
+    padding: 15px; 
+    overflow: hidden;
+} 
+
+.about-thumb-wrapper .about-thumb:nth-child(1)  { 
+    margin-top: 45px;
+} 
+
+.about-thumb-wrapper .about-thumb:last-child  { 
+    transform: translateY(-45px);
+} 
+
+
+.sec-title { 
+    font-family: 'Oswald', sans-serif;
+    color: #212121; 
+    font-size: 45px;
+    font-weight: bold; 
+    margin-bottom: 18px;
+
+} 
+
+p { 
+    font-family: 'Poppins', sans-serif;
+    margin: 10px auto;
+    font-size: 18px;
+} 
+
+.section-header p  { 
+    font-size: 20px; 
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Inconsolata', monospace;
+    margin:  10px auto;
+    color: #212121;
+} 
+
+img { 
+    vertical-align:  middle;
+    max-width: 100%; 
+    height: auto; 
+    user-select: none;
+} 
+
+.about-thumb-wrapper .about-thumb img  { 
+    object-fit:   cover; 
+    object-position:   center; 
+    width:  100%;
+    height: 100%;
+} 
+
+
