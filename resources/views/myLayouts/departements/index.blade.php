@@ -24,24 +24,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @if($rooms) --}}
-                        {{-- @foreach ($rooms as $r ) --}}
+                    @if($departments)
+                        @foreach ($departments as $d )
                             <tr>
-                                <td></td>
-                                <td class="text-truncate" style="max-width: 30px"></td>
-                                <td value=""></td>
+                                <td>{{$d->id}}</td>
+                                <td class="text-truncate" style="max-width: 30px">{{$d->title}}</td>
+                                <td value="">{{$d->detail}}</td>
                                 <td class="d-flex justify-content-center">
-                                    <a href="{{url('myLayouts/departements/')}}" class="btn btn-sm me-3" style="color: white; background-color:#070A52;"><i class='bx bxs-show'></i></a>
-                                    <a href="{{url('myLayouts/departements/edit')}}" class="btn btn-success btn-sm me-3"><i class='bx bxs-edit' ></i></a>
-                                    <form action="{{ url('myLayouts/departements'. '/')}}" method="POST">
+                                    <a href="{{url('myLayouts/departements/'.$d->id)}}" class="btn btn-sm me-3" style="color: white; background-color:#070A52;"><i class='bx bxs-show'></i></a>
+                                    <a href="{{url('myLayouts/departements/'.$d->id.'/edit')}}" class="btn btn-success btn-sm me-3"><i class='bx bxs-edit' ></i></a>
+                                    <form action="{{ url('myLayouts/departements'.'/'.$d->id )}}" method="POST">
                                         @csrf
                                         @method("DELETE")
                                         <button onclick="return confirm('Are you sure to delete thi Room Type ?')" class="btn btn-danger btn-sm me-3"><i class='bx bxs-trash' ></i></button>
                                     </form>
                                 </td>
                             </tr>
-                        {{-- @endforeach --}}
-                    {{-- @endif --}}
+                        @endforeach
+                    @endif
                 </tbody>
                 <tfoot>
                     <tr>
