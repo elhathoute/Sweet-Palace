@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\RoomType;
+use App\Models\RoomTypeImage;
 
 class RoomTypeController extends Controller
 {
@@ -35,6 +36,7 @@ class RoomTypeController extends Controller
             'detail'=>'required',
             'price'=>'required',
             'image_path'=>'required|mimes:jpg,png,jpeg',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif',
         ],[
             'title.required' => 'Please enter a valid name for the Room Type !',
             'detail.required' => 'Please enter the details !',
@@ -57,6 +59,14 @@ class RoomTypeController extends Controller
             'price'=>$request->price,
             'image_path'=> $last_img,
         ]);
+
+        foreach($request->file('images') as $img){
+            $imgPath = $img->store('/images');
+            $imgData = new RoomTypeImage;
+            $imgData->roomType_id = $roomType->id;
+            $imgData->image = $imgPath;
+            $imgData->save();
+        }
 
         return redirect('/myLayouts/roomType')->with('success','Room Type has been created successfully.');
 
