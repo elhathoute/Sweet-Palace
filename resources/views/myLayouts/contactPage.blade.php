@@ -75,13 +75,13 @@
             </div>
             <div class="col-lg-6 mt-lg-0 mt-4">
                 <div class="contact-right-area">
-                    <div class="row mb-5" style="background:transparent;">
+                    <div class="row mb-5 mx-auto" style="background:transparent;">
                         <div class="col-lg-10">
-                            <h3 class="title mb-2">
+                            <h3 class="title mb-2 text-center">
                                 Get In Touch With Us
                             </h3>
-                            <p class="description">
-                                Maecenas nec odio et ante tincidunt tempus. Donec vitae apitlibero venenatis.
+                            <p class="description fs-6 text-center">
+                                Our team is always happy to assist you. Contact us for any assistance you may need.
                             </p>
                         </div>
                     </div>
@@ -125,9 +125,20 @@
         </div>
     </div>
 </section>
+<section>
+    <div class=" mt-5">
+        <!--Google map-->
+        <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 450px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319472.022050908!2d-8.126814218652388!3d31.54725877580163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sfr!2sma!4v1681567254577!5m2!1sfr!2sma" 
+             style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!--Google Maps-->
     </div>
-        @include('myLayouts.footer')
-    </div>
+</section>
+
+</div>
+    @include('myLayouts.footer')
+</div>
 
 </body>
 {{-- links bootstrap  start--}}
