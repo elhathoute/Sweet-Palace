@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\StaffDepartement;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\StaffDepartementr;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +37,10 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('/myLayouts/roomTypeImages', ImageController::class);
+Route::resource('/myLayouts/departements', StaffDepartement::class);
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
 Route::resource('/myLayouts/rooms',RoomController::class);
 Route::resource('/myLayouts/admins', AdminController::class);
+
+//delete image
+Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
