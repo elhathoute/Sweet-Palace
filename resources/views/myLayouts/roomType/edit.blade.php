@@ -7,7 +7,7 @@
     @endif
     <div class="card shadow my-5">
         <div class="card-header py-3 d-flex align-items-center justify-content-between">
-            <h6 class="m-0 fw-bold">Update RoomType</h6>
+            <h6 class="m-0 fw-bold">Update {{$data->title}}</h6>
             <a href="{{url('myLayouts/roomType')}}" class="text-decoration-none btn btn-success">View All</a>
         </div>
 
@@ -37,11 +37,19 @@
                     <div class="imageError"></div>
                 </div>
                 <div class="mb-3">
-                    <label for="image" class="form-label">Gallery Images</label>
-                    <div>
-                        @foreach($data->roomTypeImgs as $img)
-                            <img src="{{asset($img->image)}}" alt="" width="20px" height="20px">
-                        @endforeach
+                    <label for="images" class="form-label">Gallery Images</label>
+                    <input type="file" multiple name="images[]" class="form-control" id="images">
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                            @foreach($data->roomTypeImgs as $img)
+                                <div class="imgcol{{$img->id}} ">
+                                    <img src="{{asset($img->image)}}" alt="" width="20px" height="20px">
+                                    <p class="mt-2">
+                                        <button type="button" class="btn btn-dannger btn-sm delete-image" data-image-id="{{$img->id}}" style="background-color: red;color: white;">
+                                            <i class='bx bxs-trash' ></i>
+                                        </button>
+                                    </p>
+                                </div>
+                            @endforeach
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary my-4">Submit</button>
@@ -51,5 +59,29 @@
     </div>
 
 </div>
+
+@section('scripts')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".delete-image").on('click', function(){
+            var _img_id= $(this).attr('data-image-id');
+            var _vm = $(this);
+            $.ajax({
+                url:'{{url("myLayouts/room_type_images/delete")}}/'+_img_id,
+                dataType:'json',
+                beforeSend:function(){
+                    _vm.addClass('disabled');
+                },
+                success:function(res){
+                    console.log(res);
+                    $(".imgcol" + _img_id ).remove();
+                    _vm.removeClass('disabled');
+                }
+            });
+        });
+    });
+</script>
+
+@endsection
 
 @endsection

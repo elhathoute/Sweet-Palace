@@ -23,6 +23,7 @@
                         <th class="text-center">Detail</th>
                         <th class="text-center">Price</th>
                         <th class="text-center">Cover</th>
+                        <th class="text-center">Gallery Images</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -35,13 +36,14 @@
                                 <td class="text-truncate" style="max-width: 30px"> {{$d->detail}}</td>
                                 <td>{{$d->price}}</td>
                                 <td class="img-fluid" style="max-width: 30px"><img style="width: 30px; height:30px;" src="{{asset($d->image_path)}}" alt=""></td>
+                                <td  style="width:180px">{{count($d->roomTypeImgs)}}</td>
                                 <td class="d-flex justify-content-center">
                                     <a href="{{url('myLayouts/roomType/'.$d->id)}}" class="btn btn-sm me-3" style="color: white; background-color:#070A52;"><i class='bx bxs-show'></i></a>
                                     <a href="{{url('myLayouts/roomType/'.$d->id.'/edit')}}" class="btn btn-success btn-sm me-3"><i class='bx bxs-edit' ></i></a>
                                     <form action="{{ url('myLayouts/roomType'. '/'.$d->id)}}" method="POST">
                                         @csrf
                                         @method("DELETE")
-                                        <button onclick="return confirm('Are you sure to delete thi Room Type ?')" class="btn btn-danger btn-sm me-3"><i class='bx bxs-trash' ></i></button>
+                                        <button onclick="return confirm('Are you sure to delete this Room Type ?')" class="btn btn-danger btn-sm me-3"><i class='bx bxs-trash' ></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -55,6 +57,7 @@
                         <th>Detail</th>
                         <th>Price</th>
                         <th>Cover</th>
+                        <th>Gallery Images</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
