@@ -1,4 +1,4 @@
-<section id="gallery" class="gallery_wrapper">
+<section id="gallery" class="gallery_wrapper mb-5">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center my-5">

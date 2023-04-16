@@ -17,7 +17,7 @@
     <div>
         @include('myLayouts.navbar')
     </div>
-    <section class="container mt-5" style="max-width: 1600px !important;">
+    <section class="container my-5" style="max-width: 1600px !important;">
         <div class="row room-bg text-dark d-flex flex-column justify-content-center align-items-center">
             <p class="text-center intro-title">Our Rooms</p>
             <p class="text-center intro-text">Discover our comfortable and elegant rooms for an unforgettable stay at our hotel !</p>

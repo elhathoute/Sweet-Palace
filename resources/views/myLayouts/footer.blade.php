@@ -1,5 +1,5 @@
 <footer style="background-color:#1c1f19;">
-    <div class="container mt-5 py-5">
+    <div class="container py-5">
         <div class="d-flex justify-content-around mt-5">
             <div class="d-flex flex-column text-white me-4">
                 <p class="Sweet">Sweet Palace</p>

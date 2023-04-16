@@ -17,7 +17,7 @@
     <div>
         @include('myLayouts.navbar')
     </div>
-    <section class="section">
+    <section class="section" class="mb-5"> 
         <div class="container" style="max-width: 1600px !important;">
           <div class="row gy-4 justify-content-between">
             <div class="col-xl-5 col-lg-6">
