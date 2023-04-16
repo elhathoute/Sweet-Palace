@@ -108,8 +108,7 @@
 }
 
 .contact-right-area {
-    padding-left: 50px;
-    padding-right: 80px;
+    padding: 0 30px;
 }
 
 .contact-info-wrapper {
@@ -317,4 +316,17 @@ a:hover {
 }
 #right-bg {
     background-image: url('https://script.viserlab.com/viserhotel/assets/images/frontend/contact_us/62887f5e94d901653112670.jpg');
+}
+.map-container{
+    overflow:hidden;
+    /* padding-bottom:56.25%; */
+    position:relative;
+    height:0;
+}
+.map-container iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
 }
