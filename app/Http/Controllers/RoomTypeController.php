@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\RoomType;
 use App\Models\RoomTypeImage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+
 
 class RoomTypeController extends Controller
 {
@@ -36,7 +38,7 @@ class RoomTypeController extends Controller
             'detail'=>'required',
             'price'=>'required',
             'image_path'=>'required|mimes:jpg,png,jpeg',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif',
+            // 'images.*' => 'image|mimes:jpeg,png,jpg,gif',
         ],[
             'title.required' => 'Please enter a valid name for the Room Type !',
             'detail.required' => 'Please enter the details !',
@@ -60,11 +62,27 @@ class RoomTypeController extends Controller
             'image_path'=> $last_img,
         ]);
 
-        foreach($request->file('images') as $img){
-            $imgPath = $img->store('/images');
+        $files = $request->file('images');
+
+        foreach ($files as $file) {
+            // validation
+            $validator = Validator::make(
+                ['image' => $file],
+                ['image' => 'required|image|mimes:jpeg,png,jpg,gif']
+            );
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator);
+            }
+
+            // enregistrement avec nom personnalisé
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('images', $fileName);
+
+            // création de la base de données
             $imgData = new RoomTypeImage;
             $imgData->roomType_id = $roomType->id;
-            $imgData->image = $imgPath;
+            $imgData->image = $filePath;
             $imgData->save();
         }
 
@@ -109,6 +127,15 @@ class RoomTypeController extends Controller
             ]);
 
         }
+        if($request->hasFile('images')){
+            foreach($request->file('images') as $img){
+                $imgPath = $img->store('/public/images');
+                $imgData = new RoomTypeImage;
+                $imgData->roomType_id = $data->id;
+                $imgData->image = $imgPath;
+                $imgData->save();
+            }
+        }
         $request->validate([
             'title'=>'required',
             'detail'=>'required',
@@ -133,5 +160,14 @@ class RoomTypeController extends Controller
     {
         $data = RoomType::destroy($id);
         return redirect('myLayouts/roomType')->with('success', "The room type has been deleted successfully.");
+    }
+    public function destroy_image(string $img_id)
+    {
+        $data = RoomTypeImage::where('id', $img_id)->first();
+        Storage::delete($data->image);
+        RoomTypeImage::where('id', $img_id)->delete();
+        return response()->json([
+            'status'=> true,
+        ]);
     }
 }
