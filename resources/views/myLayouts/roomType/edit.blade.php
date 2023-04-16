@@ -36,6 +36,14 @@
                     <input type="file" class="form-control" id="image" name="image_path" value="{{$data->image_path}}">
                     <div class="imageError"></div>
                 </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Gallery Images</label>
+                    <div>
+                        @foreach($data->roomTypeImgs as $img)
+                            <img src="{{asset($img->image)}}" alt="" width="20px" height="20px">
+                        @endforeach
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-primary my-4">Submit</button>
             </form>
 
