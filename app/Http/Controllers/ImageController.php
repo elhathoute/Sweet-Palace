@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Image;
+use App\Models\RoomType;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
@@ -11,37 +12,25 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::all();
-
-        return view('images.index', compact('images'));
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(RoomType $roomType)
     {
-        return view('images.create');
+
+
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, RoomType $roomType)
     {
-        $request->validate([
-            'name' => 'required|image',
-        ]);
 
-        $name = $request->file('name')->store('public/images');
-
-        $image = new Image([
-            'name' => basename($name),
-        ]);
-
-        $image->save();
-
-        return redirect()->route('images.index');
     }
 
     /**
