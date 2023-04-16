@@ -64,6 +64,15 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{url('myLayouts/departements')}}">
+                        <span class="icon">
+                            <i class='ion-icon bx bx-buildings' ></i>
+                        </span>
+                        <span class="title">Departments</span>
+                    </a>
+                </li>
+
                 {{-- <li>
                     <a href="#">
                         <span class="icon">
@@ -334,9 +343,9 @@
 
     <!-- =========== Scripts =========  -->
     <script src="{{asset('/js/dash.js')}}"></script>
-
+    @yield('scripts')
     <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
