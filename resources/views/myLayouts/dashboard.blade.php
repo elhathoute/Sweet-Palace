@@ -72,6 +72,14 @@
                         <span class="title">Departments</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{url('myLayouts/staff')}}">
+                        <span class="icon">
+                            <i class='ion-icon bx bxs-user-detail'></i>
+                        </span>
+                        <span class="title">Staff</span>
+                    </a>
+                </li>
 
                 {{-- <li>
                     <a href="#">
