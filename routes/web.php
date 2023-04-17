@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffDepartement;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/myLayouts/booking', BookingController::class);
 Route::resource('/myLayouts/staff', StaffController::class);
 Route::resource('/myLayouts/departements', StaffDepartement::class);
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
