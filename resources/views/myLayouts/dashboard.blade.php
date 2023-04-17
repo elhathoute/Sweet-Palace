@@ -80,24 +80,15 @@
                         <span class="title">Staff</span>
                     </a>
                 </li>
-
-                {{-- <li>
-                    <a href="#">
+                <li>
+                    <a href="{{url('myLayouts/booking')}}">
                         <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
+                            <i class='ion-icon bx bx-bookmark-alt'></i>
                         </span>
-                        <span class="title">Settings</span>
+                        <span class="title">Booking</span>
                     </a>
-                </li> --}}
+                </li>
 
-                {{-- <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Password</span>
-                    </a>
-                </li> --}}
 
                 <li>
                     <a href="#">
