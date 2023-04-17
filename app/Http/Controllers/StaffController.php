@@ -137,4 +137,5 @@ class StaffController extends Controller
         $staff->delete();
         return redirect('myLayouts/staff')->with('success', "The Staff has been deleted successfully.");
     }
+
 }
