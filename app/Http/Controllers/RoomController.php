@@ -63,9 +63,8 @@ class RoomController extends Controller
      */
     public function edit(string $id)
     {
-        $room = Room::with('RoomType')->find($id);
         $roomTypes = RoomType::all();
-
+        $room = Room::with('RoomType')->find($id);
         return view('myLayouts.rooms.edit', ['room'=>$room, 'roomTypes'=>$roomTypes]);
     }
 
