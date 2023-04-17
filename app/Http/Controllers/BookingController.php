@@ -63,32 +63,63 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Booking $booking)
+    public function show(string $id)
     {
-        //
+        $booking = Booking::find($id);
+        return view('myLayouts.booking.show')->with('booking', $booking);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Booking $booking)
+    public function edit(string $id)
     {
-        //
+        $user = User::all();
+        $room = Room::all();
+        $booking = Booking::with(['user', 'room'])->find($id);
+        return view('myLayouts.booking.edit', ['user'=>$user, 'room'=>$room, 'booking'=>$booking]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, string $id)
     {
-        //
+        $booking = Booking::find($id);
+        $request->validate([
+            'user_id'=>'required|exists:users,id',
+            'room_id'=>'required|exists:rooms,id',
+            'checkin_date'=>'required|after_or_equal:today',
+            'checkout_date'=>'required|after:checkin_date',
+            'total_adults'=>'required|integer|min:1',
+            'total_children'=>'required|integer|min:0',
+
+        ],[
+            'user_id.required' => 'Please Select a User !',
+            'room_id.required' => 'Please Select a Room !',
+            'checkin_date.required' => 'Please Select a date for check in !',
+            'checkout_date.required' => 'Please Select a date for check out !',
+            'total_adults.required' => 'Please enter a number of adults !',
+            'total_children.required' => 'Please enter a number of Children !',
+        ]);
+        $booking->update([
+            'user_id' => $request->user_id,
+            'room_id' => $request->room_id,
+            'checkin_date' => $request->checkin_date,
+            'checkout_date' => $request->checkout_date,
+            'total_adults' => $request->total_adults,
+            'total_children' => $request->total_children,
+        ]);
+        return redirect('myLayouts/booking/'.$id.'/edit')->with('success', 'The booking has been updated successfully.');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Booking $booking)
+    public function destroy(string $id)
     {
-        //
+        $booking = Booking::destroy($id);
+        return redirect('myLayouts/booking')->with('success', "The booking has been deleted successfully.");
     }
 }
