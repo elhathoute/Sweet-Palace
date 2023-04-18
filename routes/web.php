@@ -36,13 +36,18 @@ Route::get('/dashboard', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/acceuil', function(){
+    return view('myLayouts/acceuil');
+})->name('acceuil');
 Route::resource('/myLayouts/booking', BookingController::class);
 Route::resource('/myLayouts/staff', StaffController::class);
 Route::resource('/myLayouts/departements', StaffDepartement::class);
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
 Route::resource('/myLayouts/rooms',RoomController::class);
 Route::resource('/myLayouts/admins', AdminController::class);
+
+//check availabality
+Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
 
 //delete images
 Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
