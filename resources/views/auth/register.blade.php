@@ -1,12 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
+<div class="container"  style="max-width: 1600px !important;">
+    {{-- <div class="row text-center">
+        <p>Welcome to our online booking system</p>
+        <p>We hope you find it easy to use and look forward to welcoming you in person.</p>
+    </div> --}}
+    <div class="row justify-content-around registration my-4" style="background-color:#fff; border-radius:15px;">
+        <div class="col-md-7 ps-0" >
+            <img src="{{asset('/images/register8.jpg')}}" class="w-100 h-100 img-fluid" alt="" style="object-position: center; object-fit: cover;  border-radius:15px;">
         </div>
-        <div class="col-md-6">
-            <div class="card border-0">
+        <div class="col-md-5">
+            <div class="card border-0 py-3">
                 <div class="card-body">
                     <div class="card-title">
                         <h3 class="text-center capital-title">Create your Account</h3>
@@ -16,7 +21,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="name" class="col-md-12 col-form-label ">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Name') }}</label>
 
                             <div class="col-md-12 user-input">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
@@ -30,7 +35,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-12 col-form-label">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Email Address') }}</label>
 
                             <div class="col-md-12 user-input">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -44,7 +49,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="mobile" class="col-md-12 col-form-label">{{ __('Mobile Number') }}</label>
+                            <label for="mobile" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Mobile Number') }}</label>
 
                             <div class="col-md-12 user-input">
                                 <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
@@ -57,7 +62,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label for="address" class="col-md-12 col-form-label">{{ __('Address') }}</label>
+                            <label for="address" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Address') }}</label>
 
                             <div class="col-md-12 user-input">
                                 <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address">
@@ -71,11 +76,11 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-12 col-form-label">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Password') }}</label>
 
                             <div class="col-md-12 user-input">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                <i class='bx bx-key' ></i>
+                                <i class='bx bxs-key'></i>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -85,18 +90,18 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-12 col-form-label">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-12 col-form-label fw-bold fs-5">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-12  user-input">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                <i class='bx bx-key' ></i>
+                                <i class='bx bxs-key'></i>
                             </div>
                         </div>
 
-                        <div class="row my-5">
+                        <div class="row ">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary w-100">
-                                    {{ __('Register') }}
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold fs-5 register-btn mt-3">
+                                    {{ __('Sign In') }}
                                 </button>
                             </div>
                         </div>
