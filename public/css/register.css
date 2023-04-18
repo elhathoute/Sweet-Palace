@@ -72,3 +72,20 @@ input:focus{
 .user-input .form-control {
     padding-left: 40px;
 }
+.registration{
+    border: none;
+}
+main{
+    background-color: #fff;
+}
+.register-btn{
+    background-color: #f68247 !important;
+    border-color: #f68247 !important;
+}
+.register-btn:hover{
+    background-color: #fff !important;
+    color: #f68247 !important;
+    border-color: #f68247 !important;
+    font-weight: bolder !important;
+    font-size: 19px !important;
+}
