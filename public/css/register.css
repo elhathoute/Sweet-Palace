@@ -40,3 +40,35 @@
     z-index: 9;
     animation: 500ms ease-in-out 0s normal none 1 running faceInDown;
 }
+/* form */
+input{
+    background-color: #fff !important;
+}
+input:focus{
+    box-shadow: none !important;
+    border: 2px solid black !important;
+}
+.capital-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+}
+.sous-title{
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+}
+.user-input{
+    position: relative;
+}
+.user-input >i{
+    display: flex;
+    align-items:   center;
+    height:  100%;
+    position: absolute;
+    top: 0;
+    width: 38px;
+    padding-left: 15px;
+}
+.user-input .form-control {
+    padding-left: 40px;
+}
