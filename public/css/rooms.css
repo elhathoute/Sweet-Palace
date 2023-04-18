@@ -48,11 +48,11 @@
 
 
 .room-bg{
-    background-image: url('../images/bbbg.jpg');
+    /* background-image: url('../images/bbbg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    background-color: rgb(72, 64, 64);
+    background-color: rgb(72, 64, 64); */
     width: 100%;
     height: 200px;
     margin-bottom: 100px;
