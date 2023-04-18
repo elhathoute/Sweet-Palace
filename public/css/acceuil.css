@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 /* Navbar Start */
+
+.dropdown-item:hover{
+    background-color: #565f51 !important;
+    color: #fff;
+} 
+
 .navbar-brand, .Sweet{
     font-family: 'Delicious Handrawn', cursive;
     font-size: 25px;
