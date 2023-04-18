@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Room;
 use App\Models\Booking;
@@ -57,6 +57,7 @@ class BookingController extends Controller
             'total_adults' => $request->total_adults,
             'total_children' => $request->total_children,
         ]);
+        // return response()->json(['success' => 'Les données ont été enregistrées avec succès !']);
         return redirect('/myLayouts/booking')->with('success','Booking has been created successfully.');
     }
 
@@ -121,5 +122,11 @@ class BookingController extends Controller
     {
         $booking = Booking::destroy($id);
         return redirect('myLayouts/booking')->with('success', "The booking has been deleted successfully.");
+    }
+
+    public function available_rooms(Request $request, $checkin_date){
+        $available = DB::select("SELECT * FROM rooms WHERE id NOT IN (SELECT room_id FROM bookings WHERE
+                                '$checkin_date' BETWEEN checkin_date AND checkout_date)");
+        return response()->json(['data'=>$available]);
     }
 }
