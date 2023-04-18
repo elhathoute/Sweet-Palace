@@ -12,7 +12,7 @@
             </div>
 
             <div class="card-body">
-                <form method="post" action="{{url('myLayouts/booking')}}">
+                <form id="booking-form" method="post" action="{{url('myLayouts/booking')}}">
                     @csrf
 
                     <div class="mb-3">
@@ -28,7 +28,7 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="room_id" class="form-label">Select Room</label>
                         <select class="form-select" id="room_id" name="room_id">
                             <option value="0" selected>---Select---</option>
@@ -39,7 +39,7 @@
                         @error('room_id')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
-                    </div>
+                    </div> --}}
 
                      <div class="mb-3">
                         <label for="checkin_date" class="form-label">Check In</label>
@@ -55,6 +55,13 @@
                         @error('checkout_date')
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
+                    </div>
+
+                     <div class="mb-3">
+                        <label for="availabale_rooms" class="form-label">Availabale Rooms</label>
+                        <select class="form-select room-list" id="availabale_rooms" name="room_id">
+
+                        </select>
                     </div>
 
                     <div class="mb-3">
@@ -80,5 +87,28 @@
         </div>
 
     </div>
+    @section('scripts')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#checkin_date").on('blur', function(){
+                var _checkindate = $(this).val();
+                $.ajax({
+                    url:"{{url('myLayouts/booking')}}/available-rooms/"+_checkindate,
+                    datatype:'json',
+                    beforeSend:function(){
+                        $('.room-list').html('<option>Loading Available Rooms</option>');
+                    },
+                    success:function(res){
+                        var _html = '';
+                        $.each(res.data, function(index, row){
+                            _html += '<option value="'+row.id+'">'+row.title+'</option>'
+                        });
+                        $('.room-list').html(_html);
+                    }
+                });
+            });
+        });
+    </script>
+@endsection
 
 @endsection
