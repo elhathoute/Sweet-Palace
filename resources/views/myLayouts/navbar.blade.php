@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link active text-white mx-3" aria-current="page" href="{{ url('/') }}">Home</a>
+                <a class="nav-link text-white mx-3" aria-current="page" href="{{ url('/') }}">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="{{ url('/about') }}">About Us</a>
@@ -16,10 +16,10 @@
                 <a class="nav-link text-white mx-3" href="{{ url('/rooms') }}">Rooms</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#services">Services</a>
+                <a class="nav-link text-white mx-3" href="{{ url('/services') }}">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white mx-3" href="#">Gallery</a>
+                <a class="nav-link text-white mx-3" href="{{ url('/gallery') }}">Gallery</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white mx-3" href="{{url('/contact')}}">Contact</a>
@@ -47,10 +47,10 @@
 
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class='bx bxs-user-circle fs-5 me-2' ></i><span>Edit Profile</span> 
+                            <i class='bx bxs-user-circle fs-5 me-2' ></i><span>Edit Profile</span>
                         </a>
                         <a class="dropdown-item d-flex align-items-center" href="#">
-                            <i class='bx bxs-key fs-5 me-2'></i><span>Change Password</span> 
+                            <i class='bx bxs-key fs-5 me-2'></i><span>Change Password</span>
                         </a>
                         <hr class="dropdown-divider">
                         <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
