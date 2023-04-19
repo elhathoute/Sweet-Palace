@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         @include('myLayouts.navbar')
-        
+
 
         <main class="py-4">
             @yield('content')
@@ -30,7 +30,7 @@
         <section>
             @extends('myLayouts.footer')
         </section>
-       
+
     </div>
 </body>
 {{-- links bootstrap  start--}}
