@@ -62,28 +62,45 @@ class RoomTypeController extends Controller
             'image_path'=> $last_img,
         ]);
 
-        $files = $request->file('images');
+        // $files = $request->file('images');
 
-        foreach ($files as $file) {
-            // validation
-            $validator = Validator::make(
-                ['image' => $file],
-                ['image' => 'required|image|mimes:jpeg,png,jpg,gif']
-            );
+        // foreach ($files as $file) {
+        //     // validation
+        //     $validator = Validator::make(
+        //         ['image' => $file],
+        //         ['image' => 'required|image|mimes:jpeg,png,jpg,gif']
+        //     );
 
-            if ($validator->fails()) {
-                return redirect()->back()->withErrors($validator);
+        //     if ($validator->fails()) {
+        //         return redirect()->back()->withErrors($validator);
+        //     }
+
+        //     // enregistrement avec nom personnalisé
+        //     $fileName = time() . '_' . $file->getClientOriginalName();
+        //     $filePath = $file->storeAs('images', $fileName);
+
+        //     // création de la base de données
+        //     $imgData = new RoomTypeImage;
+        //     $imgData->roomType_id = $roomType->id;
+        //     $imgData->image = $filePath;
+        //     $imgData->save();
+        // }
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $validator = Validator::make(['image' => $image], ['image' => 'required|image|mimes:jpeg,png,jpg,gif']);
+
+                if ($validator->fails()) {
+                    return redirect()->back()->withErrors($validator);
+                }
+
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
+
+                $imgData = new RoomTypeImage;
+                $imgData->roomType_id = $roomType->id;
+                $imgData->image = 'images/' . $imageName;
+                $imgData->save();
             }
-
-            // enregistrement avec nom personnalisé
-            $fileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('images', $fileName);
-
-            // création de la base de données
-            $imgData = new RoomTypeImage;
-            $imgData->roomType_id = $roomType->id;
-            $imgData->image = $filePath;
-            $imgData->save();
         }
 
         return redirect('/myLayouts/roomType')->with('success','Room Type has been created successfully.');
@@ -127,12 +144,22 @@ class RoomTypeController extends Controller
             ]);
 
         }
-        if($request->hasFile('images')){
-            foreach($request->file('images') as $img){
-                $imgPath = $img->store('/public/images');
+        // if($request->hasFile('images')){
+        //     foreach($request->file('images') as $img){
+        //         $imgPath = $img->store('storage/images/');
+        //         $imgData = new RoomTypeImage;
+        //         $imgData->roomType_id = $data->id;
+        //         $imgData->image = $imgPath;
+        //         $imgData->save();
+        //     }
+        // }
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imageName = $image->getClientOriginalName();
+                $image->move(public_path('images'), $imageName);
                 $imgData = new RoomTypeImage;
                 $imgData->roomType_id = $data->id;
-                $imgData->image = $imgPath;
+                $imgData->image = 'images/' . $imageName;
                 $imgData->save();
             }
         }
@@ -164,7 +191,6 @@ class RoomTypeController extends Controller
     public function destroy_image(string $img_id)
     {
         $data = RoomTypeImage::where('id', $img_id)->first();
-        Storage::delete($data->image);
         RoomTypeImage::where('id', $img_id)->delete();
         return response()->json([
             'status'=> true,
