@@ -24,6 +24,12 @@ Route::get('/', function () {
 Route::get('/rooms', function () {
     return view('myLayouts/roomPage');
 });
+Route::get('/services', function () {
+    return view('myLayouts/servicePage');
+});
+Route::get('/gallery', function () {
+    return view('myLayouts/galleryPage');
+});
 Route::get('/about', function () {
     return view('myLayouts/aboutPage');
 });
