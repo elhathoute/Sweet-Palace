@@ -10,7 +10,7 @@
         <div class="col-md-7 ps-0" >
             <img src="{{asset('/images/register8.jpg')}}" class="w-100 h-100 img-fluid" alt="" style="object-position: center; object-fit: cover;  border-radius:15px;">
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5  my-auto">
             <div class="card border-0 py-3">
                 <div class="card-body">
                     <div class="card-title">
