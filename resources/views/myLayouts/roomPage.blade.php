@@ -18,9 +18,9 @@
         @include('myLayouts.navbar')
     </div>
     <section class="container my-5" style="max-width: 1600px !important;">
-        <div class="row room-bg text-dark d-flex flex-column justify-content-center align-items-center">
-            <p class="text-center intro-title">Our Rooms</p>
-            <p class="text-center intro-text">Discover our comfortable and elegant rooms for an unforgettable stay at our hotel !</p>
+        <div class="row mb-5 d-flex flex-column justify-content-center align-items-center section-head col-sm-12">
+            <h3 class="text-center intro-title"><span>Our </span> Rooms</h3>
+            <p class="text-center intro-text">Explore our selection of luxurious and comfortable rooms to find the perfect accommodation for your stay at our hotel.</p>
         </div>
         <div class="row gy-4 justify-content-center">
             <div class="col-xl-4 col-md-6 col-xs-10">
@@ -38,7 +38,7 @@
                             <div>
                                 <h6 class="price text--base mb-3">
                                     100.00
-                                    USD / Night                                        
+                                    USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -66,7 +66,7 @@
                         <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
                             <div>
                                 <h6 class="price text--base mb-3">
-                                    250.00 USD / Night                                        
+                                    250.00 USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -97,7 +97,7 @@
                         <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
                             <div>
                                 <h6 class="price text--base mb-3">
-                                    230.00 USD / Night                                        
+                                    230.00 USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -117,7 +117,7 @@
                 <div class="room-card">
                     <div class="room-card__thumb">
                         <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/5DQ2Q5WR82S6.jpg" alt="image">
-        
+
                     </div>
                     <div class="room-card__content">
                         <h3 class="title mb-2">
@@ -126,7 +126,7 @@
                         <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
                             <div>
                                 <h6 class="price text--base mb-3">
-                                    12.00 USD / Night                                        
+                                    12.00 USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -159,7 +159,7 @@
                         <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
                             <div>
                                 <h6 class="price text--base mb-3">
-                                    60.00 USD / Night                                        
+                                    60.00 USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -187,7 +187,7 @@
                         <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
                             <div>
                                 <h6 class="price text--base mb-3">
-                                        220.00 USD / Night                                        
+                                        220.00 USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -218,7 +218,7 @@
                             <div>
                                 <h6 class="price text--base mb-3">
                                     350.00
-                                    USD / Night                                        
+                                    USD / Night
                                 </h6>
                                 <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
                                     <span class="custom--badge">
@@ -247,4 +247,3 @@
 <script src="/js/main.js"></script>
 </html>
 
-  
