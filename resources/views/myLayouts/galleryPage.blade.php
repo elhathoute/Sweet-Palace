@@ -16,6 +16,10 @@
         @include('myLayouts.navbar')
     </div>
     <div class="container my-5" style="max-width: 1600px !important;">
+        <div class="section-head col-sm-12">
+            <h3><span>Our </span> Galllery</h3>
+            <p>Discover our gallery for a visual preview of our hotel and its world-class amenities.</p>
+        </div>
         <div class="row">
             <div class="col-md-4 column">
                 <img src="https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid" />
