@@ -17,60 +17,64 @@
     <div>
         @include('myLayouts.navbar')
     </div>
-    <section class="section" class="mb-5"> 
-        <div class="container" style="max-width: 1600px !important;">
-          <div class="row gy-4 justify-content-between">
-            <div class="col-xl-5 col-lg-6">
-              <div class="about-thumb-wrapper">
-                <div class="about-thumb">
-                  <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091c727e21653999900.jpg" alt="image">
-                </div>
-                <div class="about-thumb">
-                  <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d240461653999901.jpg" alt="image">
-                </div>
-                <div class="about-thumb">
-                  <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d9fd3c1653999901.jpg" alt="image">
-                </div>
-                <div class="about-thumb">
-                  <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091e478d11653999902.jpg" alt="image">
-                </div>
-              </div>
+    <section class="section" class="mb-5">
+        <div class="container my-5" style="max-width: 1600px !important;">
+            <div class="section-head col-sm-12">
+                <h3><span>About </span> Us</h3>
+                <p>Discover our story and our commitment to exceptional service for our guests in every detail of our hotel. </p>
             </div>
-            <div class="col-xl-6 col-lg-6">
-              <div class="section-header mb-xl-4 mb-3">
-                <h2 class="sec-title">
-                  Welcome and Relax at Our Hotel
-                </h2>
-                <p>
-                    Our hotel was founded with a simple vision: to provide our guests with an unforgettable stay experience. 
-                    We are committed to delivering exceptional service, superior quality, and attention to detail that will make 
-                    you feel at home.
-                </p>
-              </div>
-             
-              <div>
-                <p>
-                    Our team is made up of dedicated and passionate professionals, 
-                    ready to cater to all your needs and make your stay a unique and memorable experience.
-                </p>
-                <p>
-                    We offer a variety of elegantly decorated rooms and suites to cater to all needs and budgets. 
-                    All our rooms are equipped with modern comforts including air conditioning, cable TV, minibar, safe, and free Wi-Fi.
-                </p>
-                <p>
-                    We are located in a prime location, close to many local attractions and popular destinations. 
-                    Whether you're here for business or pleasure, our location is ideal for all your needs.
-                </p>
-                <p>
-                    We hope you enjoy your stay in our hotel and come back to visit us soon. 
-                    If you have any questions or concerns, please feel free to contact us at any time.
-                </p>
-              </div>
+            <div class="row justify-content-between">
+                <div class="col-xl-5 col-lg-6 my-auto">
+                    <div class="about-thumb-wrapper">
+                        <div class="about-thumb">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091c727e21653999900.jpg" alt="image">
+                        </div>
+                        <div class="about-thumb">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d240461653999901.jpg" alt="image">
+                        </div>
+                            <div class="about-thumb">
+                        <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d9fd3c1653999901.jpg" alt="image">
+                        </div>
+                        <div class="about-thumb">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091e478d11653999902.jpg" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="section-header mb-xl-4 mb-3">
+                        <h2 class="sec-title text-center">
+                            Welcome and Relax at Our Hotel
+                        </h2>
+                        <p class="text-center fs-6">
+                            Our hotel was founded with a simple vision: to provide our guests with an unforgettable stay experience.
+                            We are committed to delivering exceptional service, superior quality, and attention to detail that will make
+                            you feel at home.
+                        </p>
+                    </div>
+
+                    <div>
+                        <p class="text-center">
+                            Our team is made up of dedicated and passionate professionals,
+                            ready to cater to all your needs and make your stay a unique and memorable experience.
+                        </p>
+                        <p class="text-center">
+                            We offer a variety of elegantly decorated rooms and suites to cater to all needs and budgets.
+                            All our rooms are equipped with modern comforts including air conditioning, cable TV, minibar, safe, and free Wi-Fi.
+                        </p>
+                        <p class="text-center">
+                            We are located in a prime location, close to many local attractions and popular destinations.
+                            Whether you're here for business or pleasure, our location is ideal for all your needs.
+                        </p>
+                        <p class="text-center">
+                            We hope you enjoy your stay in our hotel and come back to visit us soon.
+                            If you have any questions or concerns, please feel free to contact us at any time.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
       </section>
-       
+
     <div>
         @include('myLayouts.footer')
     </div>
@@ -82,4 +86,3 @@
 <script src="/js/main.js"></script>
 </html>
 
-  
