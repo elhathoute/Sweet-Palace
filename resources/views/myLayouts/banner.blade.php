@@ -46,10 +46,10 @@
     <div class="container booking-area mb-5">
         <form class="row">
             <div class="col-lg mb-3 mb-lg-0">
-                <input type="date" class="form-control" placeholder="Date">
+                <input type="date" class="form-control" placeholder="Check in ">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
-                <input type="date" class="form-control" placeholder="Date">
+                <input type="date" class="form-control" placeholder="Check Out">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
                 <select class="form-select">
