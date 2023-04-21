@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffDepartement;
@@ -57,3 +58,11 @@ Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController
 
 //delete images
 Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('profile',[ProfilController::class,'index'])->name('profile');
+    Route::post('profile/{user}',[ProfilController::class,'update'])->name('profile.update');
+    Route::get('/change-password', [ProfilController::class, 'changePassword'])->name('change-password');
+    Route::post('/change-password', [ProfilController::class, 'updatePassword'])->name('update-password');
+});
+
