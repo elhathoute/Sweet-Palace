@@ -15,7 +15,7 @@
     <section class="pt-5 pb-5">
         <div class="container">
             <div class="row">
-                 <div class="section-head col-sm-12">
+                <div class="section-head col-sm-12">
                     <h3><span>Our </span> Services</h3>
                     <p>Our hotel offers a multitude of services to meet all your needs and make your stay as enjoyable as possible. <br>We are committed to providing exceptional service and making your visit an unforgettable experience.</p>
                 </div>

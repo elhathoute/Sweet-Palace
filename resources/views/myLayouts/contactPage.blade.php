@@ -9,7 +9,7 @@
      {{-- links bootstrap  end--}}
      {{-- Icons link --}}
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>About</title>
+    <title>Contact Us</title>
     <link href="{{asset('/css/acceuil.css')}}" rel="stylesheet">
     <link href="{{asset('/css/contact.css')}}" rel="stylesheet">
 </head>
@@ -18,6 +18,10 @@
         @include('myLayouts.navbar')
     </div>
     <section class="container my-5" style="max-width: 1600px !important;">
+        <div class="section-head col-sm-12">
+            <h3><span>Contact </span> Us</h3>
+            <p> We are here to address any questions and concerns you may have. Contact us to learn more about our hotel and services, or to make a reservation.</p>
+        </div>
         <div class="contact-wrapper py-5">
             <div class="contact-wrapper-right-thumb bg_img right-bg" id="right-bg">
         </div>
@@ -86,14 +90,13 @@
                         </div>
                     </div>
                 <form method="post" action="" class="">
-                    <div class="mb-3">
+                    <div class="mb-3 position-relative">
                         <label>
                             Name
                         </label>
                         <div class="custom-icon-field">
                             <input name="name" type="text" class="form--control" value="" placeholder="Enter Your Name" required="">
-                            <i class="fas fa-user-alt">
-                            </i>
+                            <i class='bx bxs-user fas text-dark'></i>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -102,8 +105,7 @@
                         </label>
                         <div class="custom-icon-field">
                             <input name="email" type="email" class="form--control" value="" placeholder="Enter Email Address" required="">
-                            <i class="fas fa-envelope">
-                            </i>
+                            <i class='bx bxs-envelope fas text-dark' ></i>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -118,7 +120,7 @@
                         </label>
                         <textarea name="message" rows="4" class="form--control" placeholder="Write Message" required=""></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn btn--base">SEND MESSAGE</button>
                 </form>
             </div>
@@ -129,7 +131,7 @@
     <div class=" mt-5">
         <!--Google map-->
         <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 450px">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319472.022050908!2d-8.126814218652388!3d31.54725877580163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sfr!2sma!4v1681567254577!5m2!1sfr!2sma" 
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319472.022050908!2d-8.126814218652388!3d31.54725877580163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sfr!2sma!4v1681567254577!5m2!1sfr!2sma"
              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <!--Google Maps-->
