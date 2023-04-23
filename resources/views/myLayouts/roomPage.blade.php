@@ -23,38 +23,46 @@
             <p class="text-center intro-text">Explore our selection of luxurious and comfortable rooms to find the perfect accommodation for your stay at our hotel.</p>
         </div>
         <div class="row gy-4 justify-content-center">
-            <div class="col-xl-4 col-md-6 col-xs-10">
-                <div class="room-card">
-                    <div class="room-card__thumb">
-                        <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/HS69JBASW4Q8.jpg" alt="image" class="snipcss0-0-0-1">
-                    </div>
-                    <div class="room-card__content">
-                        <h3 class="title mb-2">
-                            <a href="#">
-                                Executive Suite
-                            </a>
-                        </h3>
-                        <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
-                            <div>
-                                <h6 class="price text--base mb-3">
-                                    100.00
-                                    USD / Night
-                                </h6>
-                                <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
-                                    <span class="custom--badge">
-                                        Adult 2
-                                    </span>
-                                    <span class="custom--badge">
-                                        Child 1
-                                    </span>
-                                    <a href="#" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a>
+            @if($rooms)
+                 @foreach ($rooms as $r )
+                    <div class="col-xl-4 col-md-6 col-xs-10">
+                        <div class="room-card">
+                            <div class="room-card__thumb">
+                                <img src="{{asset($r->RoomType->image_path)}}" alt="image">
+                            </div>
+                            <div class="room-card__content">
+                                <h3 class="title mb-2">
+                                    <a href="#">
+                                        {{$r->title}}
+                                    </a>
+                                </h3>
+                                <div class="room-card__bottom justify-content-between align-items-center mt-2 gap-3">
+                                    <div>
+                                        <h6 class="price text--base mb-3">
+                                            {{$r->RoomType->price}} MAD / Night
+                                        </h6>
+                                        <div class="room-capacity text--base d-flex align-items-center flex-wrap gap-3">
+                                            <span class="custom--badge">
+                                                Adult 2
+                                            </span>
+                                            <span class="custom--badge">
+                                                Child 1
+                                            </span>
+                                            <a href="{{route('booking')}}" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-xs-10">
+                @endforeach
+            @endif
+            @if(!$rooms)
+                    <div>
+                        <p>no available rooms</p>
+                    </div>
+            @endif
+            {{-- <div class="col-xl-4 col-md-6 col-xs-10">
                 <div class="room-card">
                     <div class="room-card__thumb">
                         <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/Q9G88MCC97X8.jpg" alt="image">
@@ -233,7 +241,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
     <div>

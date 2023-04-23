@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container my-5" style="max-width: 1600px !important;">
+    @if (Session::has('success'))
+        <p class="alert alert-success mt-1 mb-1">{{session('success')}}</p>
+    @endif
     <div class="row justify-content-around registration my-4" style="background-color:#fff; border-radius:15px;">
         <div class="col-md-7 ps-0" >
             <img src="{{asset('/images/login.jpg')}}" class="w-100 h-100 img-fluid" alt="" style="object-position: center; object-fit: cover;  border-radius:15px;">

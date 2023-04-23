@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class ProfilController extends Controller
@@ -55,6 +56,25 @@ class ProfilController extends Controller
         return back()->with("status", "Password changed successfully!");
     }
 
+    public function deleteAccount()
+    {
+        // Check if the user is authenticated
+        if (Auth::check()) {
+            $user = Auth::user();
 
+            // Log the user out before deleting their account
+            Auth::logout();
 
+            // Delete the user's account
+            $user->delete();
+
+            // Redirect the user to the login page with a success message
+            return redirect()->route('login')->with('success', 'Your account has been deleted.');
+        }
+
+        // If there is no authenticated user, redirect to the login page with an error message
+        return redirect()->route('login')->with('error', 'You must be logged in to delete your account.');
+
+    }
+    
 }

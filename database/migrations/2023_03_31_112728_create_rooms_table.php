@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string('title');
             $table->unsignedBigInteger('roomType_id');
             $table->foreign('roomType_id')->references('id')->on('room_types')->cascadeOnDelete();
+            $table->boolean('available')->default(1);
             $table->timestamps();
 
         });

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\RoomType;
 use App\Models\RoomTypeImage;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 
 
 class RoomTypeController extends Controller
@@ -36,12 +35,16 @@ class RoomTypeController extends Controller
         $request->validate([
             'title'=>'required',
             'detail'=>'required',
+            'adults'=>'required|min:1',
+            'children'=>'required|min:0',
             'price'=>'required',
             'image_path'=>'required|mimes:jpg,png,jpeg',
-            // 'images.*' => 'image|mimes:jpeg,png,jpg,gif',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif',
         ],[
             'title.required' => 'Please enter a valid name for the Room Type !',
             'detail.required' => 'Please enter the details !',
+            'adults.required' => 'Please enter a number for adults !',
+            'children.required' => 'Please enter a number for children !',
             'price.required' => 'Enter a valid price !',
             'image_path.required' => 'Please select an image !',
         ]);
@@ -58,33 +61,13 @@ class RoomTypeController extends Controller
         $roomType = RoomType::create([
             'title'=>$request->title,
             'detail'=>$request->detail,
+            'adults'=>$request->adults,
+            'children'=>$request->children,
             'price'=>$request->price,
             'image_path'=> $last_img,
         ]);
 
-        // $files = $request->file('images');
 
-        // foreach ($files as $file) {
-        //     // validation
-        //     $validator = Validator::make(
-        //         ['image' => $file],
-        //         ['image' => 'required|image|mimes:jpeg,png,jpg,gif']
-        //     );
-
-        //     if ($validator->fails()) {
-        //         return redirect()->back()->withErrors($validator);
-        //     }
-
-        //     // enregistrement avec nom personnalisé
-        //     $fileName = time() . '_' . $file->getClientOriginalName();
-        //     $filePath = $file->storeAs('images', $fileName);
-
-        //     // création de la base de données
-        //     $imgData = new RoomTypeImage;
-        //     $imgData->roomType_id = $roomType->id;
-        //     $imgData->image = $filePath;
-        //     $imgData->save();
-        // }
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $validator = Validator::make(['image' => $image], ['image' => 'required|image|mimes:jpeg,png,jpg,gif']);
@@ -144,15 +127,7 @@ class RoomTypeController extends Controller
             ]);
 
         }
-        // if($request->hasFile('images')){
-        //     foreach($request->file('images') as $img){
-        //         $imgPath = $img->store('storage/images/');
-        //         $imgData = new RoomTypeImage;
-        //         $imgData->roomType_id = $data->id;
-        //         $imgData->image = $imgPath;
-        //         $imgData->save();
-        //     }
-        // }
+
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = $image->getClientOriginalName();
@@ -166,15 +141,21 @@ class RoomTypeController extends Controller
         $request->validate([
             'title'=>'required',
             'detail'=>'required',
+            'adults'=>'required|min:1',
+            'children'=>'required|min:0',
             'price'=>'required',
         ],[
             'title.required' => 'Please enter a valid Room Title !',
             'detail.required' => 'Please enter the Details for the Room !',
+             'adults.required' => 'Please enter a number for adults !',
+            'children.required' => 'Please enter a number for children !',
             'price.required' => 'Enter a Room price !',
         ]);
         $data->update([
             'title'=>$request->title,
             'detail'=>$request->detail,
+            'adults'=>$request->adults,
+            'children'=>$request->children,
             'price'=>$request->price,
         ]);
         return redirect('myLayouts/roomType/'.$id.'/edit')->with('success', 'The room Type has been updated successfully.');

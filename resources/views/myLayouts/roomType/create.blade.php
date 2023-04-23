@@ -29,12 +29,27 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label for="adults" class="form-label">Adults</label>
+                    <input type="number" class="form-control" id="adults" name="adults">
+                    @error('adults')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="children" class="form-label">Children</label>
+                    <input type="number" class="form-control" id="children" name="children">
+                    @error('children')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
                     <label for="price" class="form-label">Price</label>
                     <input type="number" class="form-control" id="price" name="price">
                     @error('price')
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
+                
                 <div class="mb-3">
                     <label for="image" class="form-label">Cover</label>
                     <input type="file" class="form-control" id="image" name="image_path">
@@ -49,7 +64,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
-              
+
                 <button type="submit" class="btn btn-primary my-4">Submit</button>
             </form>
 

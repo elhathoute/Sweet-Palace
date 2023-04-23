@@ -8,7 +8,7 @@ class RoomType extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title','detail','price','image_path'
+        'title','detail', 'adults', 'children','price','image_path'
     ];
     function Room()
     {
@@ -17,5 +17,17 @@ class RoomType extends Model
     public function roomTypeImgs()
     {
         return $this->hasMany(RoomTypeImage::class, 'roomType_id');
+    }
+    public function amenitie()
+    {
+        return $this->hasMany(Amenities::class);
+    }
+    public function complements()
+    {
+        return $this->hasMany(Complements::class);
+    }
+    public function beds()
+    {
+        return $this->hasMany(Bed::class);
     }
 }

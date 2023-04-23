@@ -28,7 +28,13 @@
             </div>
             <div class="mt-2 d-flex">
                 <button type="submit" class="btn btn-outline-dark me-2">Save Changes</button>
-                <a href="" class="btn btn-dark">Cancel</a>
+                <a href="{{url('myLayouts.acceuil')}}" class="btn btn-dark">Cancel</a>
+
+                {{-- <form action="{{ route('user.delete') }}" method="post">
+                    @csrf
+                    @method('delete')
+                        <button type="submit">Delete Profile</button>
+                </form>           --}}
             </div>
         </div>
     </div>

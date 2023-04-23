@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\StaffController;
@@ -22,24 +23,26 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('myLayouts/acceuil');
 });
-Route::get('/rooms', function () {
-    return view('myLayouts/roomPage');
-});
+Route::get('/booking', function () {
+    return view('myLayouts/booking');
+})->name('booking');
+
+
 Route::get('/services', function () {
     return view('myLayouts/servicePage');
 });
 Route::get('/gallery', function () {
     return view('myLayouts/galleryPage');
 });
-Route::get('/about', function () {
-    return view('myLayouts/aboutPage');
-});
-Route::get('/contact', function () {
-    return view('myLayouts/contactPage');
-});
+
+
 Route::get('/dashboard', function () {
     return view('myLayouts/dashboard');
 });
+Route::get('/about', [PageController::class, 'about_us']);
+Route::get('/rooms',[PageController::class, 'diplayRooms']);
+Route::get('/contact',[PageController::class, 'contact_us'])->name('contact');
+Route::post('/save_contact_us',[PageController::class, 'save_contact_us']);
 
 Auth::routes();
 
@@ -64,5 +67,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('profile/{user}',[ProfilController::class,'update'])->name('profile.update');
     Route::get('/change-password', [ProfilController::class, 'changePassword'])->name('change-password');
     Route::post('/change-password', [ProfilController::class, 'updatePassword'])->name('update-password');
+    Route::match(['post', 'delete'],'/delete-account', [ProfilController::class, 'deleteAccount'])->name('user.delete');
+
 });
 
