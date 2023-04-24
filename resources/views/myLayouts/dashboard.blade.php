@@ -96,7 +96,14 @@
                         <span class="title">Services</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="{{url('myLayouts/gallery')}}">
+                        <span class="icon">
+                            <i class='bx bx-images ion-icon'></i>
+                        </span>
+                        <span class="title">Gallery</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="#">
