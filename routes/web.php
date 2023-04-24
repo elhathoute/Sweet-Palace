@@ -2,6 +2,7 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StaffDepartement;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,7 @@ Route::resource('/myLayouts/departements', StaffDepartement::class);
 Route::resource('/myLayouts/roomType',RoomTypeController::class);
 Route::resource('/myLayouts/rooms',RoomController::class);
 Route::resource('/myLayouts/admins', AdminController::class);
+Route::resource('/myLayouts/services', ServiceController::class);
 
 //check availabality
 Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
