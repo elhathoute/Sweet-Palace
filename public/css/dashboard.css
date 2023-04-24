@@ -487,3 +487,7 @@ body {
 .icon_photo:hover{
     background-color:#e9aea1;
 }
+.gallery-pic:hover{
+    transform: scale(1);
+    transition: 1s ease;
+}

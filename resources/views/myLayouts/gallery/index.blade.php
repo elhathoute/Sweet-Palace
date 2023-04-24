@@ -68,7 +68,7 @@
                  @foreach ($pictures as $p)
                     <div class="col">
                         <div class="" style="" >
-                            <img src="{{asset($p->pictures)}}" class="card-img-top" alt="..." style="height: 280px; border-radius:15px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                            <img src="{{asset($p->pictures)}}" class="card-img-top gallery-pic" alt="..." style="height: 280px; border-radius:15px; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
                         </div>
                         <div class="d-flex justify-content-center mt-3">
                             <a href="{{url('myLayouts/gallery/'.$p->id.'/edit')}}" class="btn btn-success btn-sm me-3 px-4">Edit</i></a>
