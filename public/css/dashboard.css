@@ -479,3 +479,11 @@ body {
     left: initial;
   }
 }
+
+.icon_photo{
+    padding: 15px;
+    border-radius: 12px;
+}
+.icon_photo:hover{
+    background-color:#e9aea1;
+}
