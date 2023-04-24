@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,7 @@ Route::resource('/myLayouts/roomType',RoomTypeController::class);
 Route::resource('/myLayouts/rooms',RoomController::class);
 Route::resource('/myLayouts/admins', AdminController::class);
 Route::resource('/myLayouts/services', ServiceController::class);
+Route::resource('/myLayouts/gallery', GalleryController::class);
 
 //check availabality
 Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
