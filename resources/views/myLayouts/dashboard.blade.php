@@ -88,6 +88,14 @@
                         <span class="title">Booking</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{url('myLayouts/services')}}">
+                        <span class="icon">
+                            <i class='bx bx-cog ion-icon'></i>
+                        </span>
+                        <span class="title">Services</span>
+                    </a>
+                </li>
 
 
                 <li>
