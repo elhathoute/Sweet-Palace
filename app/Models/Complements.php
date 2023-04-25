@@ -11,8 +11,8 @@ class Complements extends Model
     protected $fillable = [
         'name',
     ];
-    function roomComplements()
+    function room_Complements()
     {
-        return $this->belongsTo(RoomType::class);
+        return $this->belongsToMany(RoomType::class);
     }
 }
