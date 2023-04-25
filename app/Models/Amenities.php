@@ -13,6 +13,6 @@ class Amenities extends Model
     ];
     function room_Amenities()
     {
-        return $this->belongsToMany(RoomType::class);
+        return $this->belongsToMany(RoomType::class,'amenity_room_type');
     }
 }
