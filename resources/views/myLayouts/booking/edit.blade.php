@@ -16,13 +16,7 @@
                 @csrf
                 @method('put')
                 <input type="hidden" name="id" id="id" value="{{$booking->id}}">
-                {{-- <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{$room->title}}">
-                    @error('title')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div> --}}
+               
                 <div class="mb-3">
                     <label for="user_id" class="form-label">Select User</label>
                     <select class="form-select" id="user_id" name="user_id">
