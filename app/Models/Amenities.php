@@ -11,8 +11,8 @@ class Amenities extends Model
     protected $fillable = [
         'name',
     ];
-    function roomAmenities()
+    function room_Amenities()
     {
-        return $this->belongsTo(RoomType::class);
+        return $this->belongsToMany(RoomType::class);
     }
 }
