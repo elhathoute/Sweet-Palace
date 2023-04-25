@@ -18,16 +18,16 @@ class RoomType extends Model
     {
         return $this->hasMany(RoomTypeImage::class, 'roomType_id');
     }
-    public function amenitie()
+    public function amenities()
     {
-        return $this->hasMany(Amenities::class);
+        return $this->belongsToMany(Amenities::class);
     }
     public function complements()
     {
-        return $this->hasMany(Complements::class);
+        return $this->belongsToMany(Complements::class);
     }
     public function beds()
     {
-        return $this->hasMany(Bed::class);
+        return $this->belongsToMany(Bed::class);
     }
 }
