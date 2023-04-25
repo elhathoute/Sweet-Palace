@@ -11,8 +11,8 @@ class Bed extends Model
     protected $fillable = [
         'name',
     ];
-    function roomBeds()
+    function room_Beds()
     {
-        return $this->belongsTo(RoomType::class);
+        return $this->belongsToMany(RoomType::class);
     }
 }
