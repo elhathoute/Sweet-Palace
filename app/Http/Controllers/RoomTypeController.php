@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Amenities;
+use App\Models\Bed;
+use App\Models\Complements;
 use Illuminate\Http\Request;
 use App\Models\RoomType;
 use App\Models\RoomTypeImage;
@@ -24,7 +26,10 @@ class RoomTypeController extends Controller
      */
     public function create()
     {
-        return view('myLayouts.roomType.create');
+        $amenities= Amenities::all();
+        $beds= Bed::all();
+        $complements= Complements::all();
+        return view('myLayouts.roomType.create',['amenities'=>$amenities,'beds'=>$beds,'complements'=>$complements]);
     }
 
     /**
@@ -32,6 +37,7 @@ class RoomTypeController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'title'=>'required',
             'detail'=>'required',
@@ -66,8 +72,10 @@ class RoomTypeController extends Controller
             'price'=>$request->price,
             'image_path'=> $last_img,
         ]);
-
-
+        // dd($request->amenities);
+        $roomType->amenities()->syncWithoutDetaching($request->amenities);
+        $roomType->beds()->syncWithoutDetaching($request->beds);
+        $roomType->complements()->syncWithoutDetaching($request->complements);
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $validator = Validator::make(['image' => $image], ['image' => 'required|image|mimes:jpeg,png,jpg,gif']);
