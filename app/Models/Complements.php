@@ -13,6 +13,6 @@ class Complements extends Model
     ];
     function room_Complements()
     {
-        return $this->belongsToMany(RoomType::class);
+        return $this->belongsToMany(RoomType::class,'complement_room_type');
     }
 }
