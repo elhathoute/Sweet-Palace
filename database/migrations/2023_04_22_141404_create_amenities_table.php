@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('amenities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('room_type_id');
             $table->timestamps();
         });
     }
