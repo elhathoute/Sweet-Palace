@@ -1,4 +1,7 @@
 <?php
+use App\Http\Controllers\AmenityController;
+use App\Http\Controllers\ComplementController;
+use App\Http\Controllers\BedController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\BookingController;
@@ -59,6 +62,9 @@ Route::resource('/myLayouts/rooms',RoomController::class);
 Route::resource('/myLayouts/admins', AdminController::class);
 Route::resource('/myLayouts/services', ServiceController::class);
 Route::resource('/myLayouts/gallery', GalleryController::class);
+Route::resource('/myLayouts/amenities', AmenityController::class);
+Route::resource('/myLayouts/complements', ComplementController::class);
+Route::resource('/myLayouts/beds', BedController::class);
 
 //check availabality
 Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
