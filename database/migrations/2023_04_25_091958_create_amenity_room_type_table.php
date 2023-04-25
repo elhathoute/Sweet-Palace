@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('amenity_room_type', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('room_type_id');
-            $table->unsignedBigInteger('amenity_id');
+            $table->unsignedBigInteger('amenities_id');
 
             $table->foreign('room_type_id')
                 ->references('id')
                 ->on('room_types')
                 ->onDelete('cascade');
 
-            $table->foreign('amenity_id')
+            $table->foreign('amenities_id')
                 ->references('id')
                 ->on('amenities')
                 ->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }

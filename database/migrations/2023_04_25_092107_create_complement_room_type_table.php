@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('complement_room_type', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('room_type_id');
-            $table->unsignedBigInteger('complement_id');
+            $table->unsignedBigInteger('complements_id');
 
             $table->foreign('room_type_id')
                 ->references('id')
                 ->on('room_types')
                 ->onDelete('cascade');
 
-            $table->foreign('complement_id')
+            $table->foreign('complements_id')
                 ->references('id')
                 ->on('complements')
                 ->onDelete('cascade');
