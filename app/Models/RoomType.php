@@ -20,14 +20,14 @@ class RoomType extends Model
     }
     public function amenities()
     {
-        return $this->belongsToMany(Amenities::class);
+        return $this->belongsToMany(Amenities::class,'amenity_room_type');
     }
     public function complements()
     {
-        return $this->belongsToMany(Complements::class);
+        return $this->belongsToMany(Complements::class,'complement_room_type');
     }
     public function beds()
     {
-        return $this->belongsToMany(Bed::class);
+        return $this->belongsToMany(Bed::class,'bed_room_type');
     }
 }
