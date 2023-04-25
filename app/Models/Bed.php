@@ -13,6 +13,6 @@ class Bed extends Model
     ];
     function room_Beds()
     {
-        return $this->belongsToMany(RoomType::class);
+        return $this->belongsToMany(RoomType::class,'bed_room_type');
     }
 }
