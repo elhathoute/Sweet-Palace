@@ -46,6 +46,33 @@
                     </a>
                 </li>
 
+                <li class="dropdown">
+                    <a href="{{url('myLayouts/amenities')}}">
+                        <span class="icon">
+                            <i class='bx bx-library ion-icon' ></i>
+                        </span>
+                        <span class="title">Amenities</span>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{{url('myLayouts/beds')}}">
+                        <span class="icon">
+                            <i class='bx bxs-bed ion-icon'></i>
+                        </span>
+                        <span class="title">Beds</span>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="{{url('myLayouts/complements')}}">
+                        <span class="icon">
+                            <i class='bx bxs-donate-heart ion-icon' ></i>
+                        </span>
+                        <span class="title">Complements</span>
+                    </a>
+                </li>
+
                 <li>
                     <a href="{{url('myLayouts/rooms')}}">
                         <span class="icon">

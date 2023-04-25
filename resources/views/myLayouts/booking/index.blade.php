@@ -32,6 +32,7 @@
                         @foreach ($booking as $b)
                             <tr>
                                 <td>{{$b->id}}</td>
+                                @dd($b->id)
                                 <td class="text-truncate" style="max-width: 30px">{{$b->user->name}}</td>
                                 <td value="">{{$b->room->title}}</td>
                                 <td value="">{{$b->checkin_date}}</td>
