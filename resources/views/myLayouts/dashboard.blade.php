@@ -90,6 +90,14 @@
                         <span class="title">Admins</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{url('myLayouts/users')}}">
+                        <span class="icon">
+                            <i class='bx bxs-user-pin ion-icon'></i>
+                        </span>
+                        <span class="title">Users</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{url('myLayouts/departements')}}">

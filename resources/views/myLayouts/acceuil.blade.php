@@ -42,9 +42,9 @@
         @include('myLayouts.gallery')
     </div>
 
-    <div>
+    {{-- <div>
         @include('myLayouts.booking')
-    </div>
+    </div> --}}
 
 
     <div>
