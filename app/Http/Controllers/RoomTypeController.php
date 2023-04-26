@@ -113,7 +113,10 @@ class RoomTypeController extends Controller
     public function edit(string $id)
     {
         $data = RoomType::find($id);
-        return view('myLayouts.roomType.edit')->with('data', $data);
+        $amenities= Amenities::all();
+        $beds= Bed::all();
+        $complements= Complements::all();
+        return view('myLayouts.roomType.edit',['data'=>$data,'amenities'=>$amenities,'beds'=>$beds,'complements'=>$complements]);
     }
 
     /**
@@ -122,6 +125,7 @@ class RoomTypeController extends Controller
     public function update(Request $request, string $id)
     {
         $data = RoomType::find($id);
+
         if($request->hasFile('image_path')){
             $room_image = $request->file('image_path');
             $name_generate = hexdec(uniqid());
@@ -146,6 +150,7 @@ class RoomTypeController extends Controller
                 $imgData->save();
             }
         }
+
         $request->validate([
             'title'=>'required',
             'detail'=>'required',
@@ -166,6 +171,12 @@ class RoomTypeController extends Controller
             'children'=>$request->children,
             'price'=>$request->price,
         ]);
+
+
+        $data->amenities()->sync($request->amenities);
+        $data->beds()->sync($request->beds);
+        $data->complements()->sync($request->complements);
+
         return redirect('myLayouts/roomType/'.$id.'/edit')->with('success', 'The room Type has been updated successfully.');
     }
 
