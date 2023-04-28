@@ -40,15 +40,20 @@ Route::get('/services', function () {
 Route::get('/gallery', function () {
     return view('myLayouts/galleryPage');
 });
-
+Route::get('/Reservation', function () {
+    return view('myLayouts/makeReservation');
+});
 
 Route::get('/dashboard', function () {
     return view('myLayouts/dashboard');
 });
 Route::get('/about', [PageController::class, 'about_us']);
 Route::get('/rooms',[PageController::class, 'diplayRooms']);
+Route::get('/available_rooms',[PageController::class, 'checkAvailability']);
 Route::get('/contact',[PageController::class, 'contact_us'])->name('contact');
 Route::post('/save_contact_us',[PageController::class, 'save_contact_us']);
+Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'booking'])->name('bookingPage');
+// Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'reservation']);
 
 Auth::routes();
 
@@ -75,7 +80,7 @@ Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController
 Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
 
 //change Role
-Route::put('/myLayouts/usersRole/{user}', [UserController::class, 'updateRole'])->name('users.updateRole');
+Route::match(['post','get'], '/myLayouts/users/usersRole/{id}', [UserController::class, 'changeRole'])->name('users.updateRole');
 
 
 Route::middleware(['auth'])->group(function () {
