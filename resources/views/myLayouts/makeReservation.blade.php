@@ -30,7 +30,8 @@
 					</div>
 					<div class="col-md-6 col-md-offset-1">
 						<div class="booking-form">
-							<form>
+							<form method="POST" action="">
+                                @csrf
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -76,7 +77,7 @@
 									</div>
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn">Book Now</button>
+                                    <button type="submit" class="submit-btn">Book Now</button>
 								</div>
 							</form>
 						</div>
@@ -89,24 +90,7 @@
         @include('myLayouts.footer')
     </div>
 </body>
-<script>
-    // $('.form-control').each(function () {
-    //     floatedLabel($(this));
-    // });
 
-    // $('.form-control').on('input', function () {
-    //     floatedLabel($(this));
-    // });
-
-    // function floatedLabel(input) {
-    //     var $field = input.closest('.form-group');
-    //     if (input.val()) {
-    //         $field.addClass('input-not-empty');
-    //     } else {
-    //         $field.removeClass('input-not-empty');
-    //     }
-    // }
-</script>
 {{-- links bootstrap  start--}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 {{-- links bootstrap  end--}}
