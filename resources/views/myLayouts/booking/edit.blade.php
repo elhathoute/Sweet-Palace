@@ -55,21 +55,7 @@
                         <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-3">
-                    <label for="total_adults" class="form-label">Adults</label>
-                    <input type="number" class="form-control" id="total_adults" name="total_adults" value="{{$booking->total_adults}}">
-                    @error('total_adults')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="total_children" class="form-label">Children</label>
-                    <input type="number" class="form-control" id="total_children" name="total_children" value="{{$booking->total_children}}">
-                    @error('total_children')
-                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                    @enderror
-                </div>
+              
                 <button type="submit" class="btn btn-primary my-4">Update Booking</button>
             </form>
 

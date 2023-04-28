@@ -15,8 +15,6 @@
                 <div class="d-flex justify-content-center gap-4 mt-4">
                     <h6 class="card-text mb-2">Check In Date: <span class="fw-bold ms-2">{{$booking->checkin_date}}</span></h6>
                     <h6 class="card-text mb-2">Check Out Date : <span class="fw-bold ms-2">{{$booking->checkout_date}}</span></h6>
-                    <h6 class="card-text mb-2">Adults Number : <span class="fw-bold ms-2">{{$booking->total_adults}}</span></h6>
-                    <h6 class="card-text mb-2">Children Number : <span class="fw-bold ms-2">{{$booking->total_children}}</span></h6>
                 </div>
             </div>
             <div class="card-footer text-body-secondary">

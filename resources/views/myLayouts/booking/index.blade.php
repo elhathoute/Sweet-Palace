@@ -22,8 +22,6 @@
                         <th class="text-center">Room</th>
                         <th class="text-center">Check in</th>
                         <th class="text-center">Check out</th>
-                        <th class="text-center">Adults</th>
-                        <th class="text-center">Children</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -36,8 +34,7 @@
                                 <td value="">{{$b->room->title}}</td>
                                 <td value="">{{$b->checkin_date}}</td>
                                 <td value="">{{$b->checkout_date}}</td>
-                                <td value="">{{$b->total_adults}}</td>
-                                <td value="">{{$b->total_children}}</td>
+                               
                                 <td class="d-flex justify-content-center">
                                     <a href="{{url('myLayouts/booking/'.$b->id)}}" class="btn btn-sm me-3" style="color: white; background-color:#070A52;"><i class='bx bxs-show'></i></a>
                                     <a href="{{url('myLayouts/booking/'.$b->id.'/edit')}}" class="btn btn-success btn-sm me-3"><i class='bx bxs-edit' ></i></a>
@@ -58,8 +55,6 @@
                         <th class="text-center">Room</th>
                         <th class="text-center">Check in</th>
                         <th class="text-center">Check out</th>
-                        <th class="text-center">Adults</th>
-                        <th class="text-center">Children</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </tfoot>

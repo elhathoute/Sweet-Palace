@@ -28,18 +28,7 @@
                         @enderror
                     </div>
 
-                    {{-- <div class="mb-3">
-                        <label for="room_id" class="form-label">Select Room</label>
-                        <select class="form-select" id="room_id" name="room_id">
-                            <option value="0" selected>---Select---</option>
-                            @foreach ($rooms as $room)
-                                <option value="{{$room->id}}">{{$room->title}}</option>
-                            @endforeach
-                        </select>
-                        @error('room_id')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div> --}}
+
 
                      <div class="mb-3">
                         <label for="checkin_date" class="form-label">Check In</label>
@@ -56,7 +45,7 @@
                             <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    
                      <div class="mb-3">
                         <label for="availabale_rooms" class="form-label">Availabale Rooms</label>
                         <select class="form-select room-list" id="availabale_rooms" name="room_id">
@@ -64,21 +53,6 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="total_adults" class="form-label">Adults</label>
-                        <input type="number" class="form-control" id="total_adults" name="total_adults">
-                        @error('total_adults')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="total_children" class="form-label">Children</label>
-                        <input type="number" class="form-control" id="total_children" name="total_children">
-                        @error('total_children')
-                            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-                        @enderror
-                    </div>
 
                     <button type="submit" class="btn btn-primary my-4">Submit</button>
                 </form>
