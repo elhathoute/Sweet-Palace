@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Room;
@@ -25,7 +26,7 @@ class BookingController extends Controller
     {
         $users = User::all();
         $rooms = Room::all();
-        return view('myLayouts.booking.create', ['users'=>$users, 'rooms'=>$rooms]);
+        return view('myLayouts.booking.create', ['users' => $users, 'rooms' => $rooms]);
     }
 
     /**
@@ -33,32 +34,42 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
+        $room = Room::find($request->room_id);
         $request->validate([
-            'user_id'=>'required|exists:users,id',
-            'room_id'=>'required|exists:rooms,id',
-            'checkin_date'=>'required|after_or_equal:today',
-            'checkout_date'=>'required|after:checkin_date',
-            'total_adults'=>'required|integer|min:1',
-            'total_children'=>'required|integer|min:0',
+            'user_id' => 'required|exists:users,id',
+            'room_id' => 'required|exists:rooms,id',
+            'checkin_date' => 'required|after_or_equal:today',
+            'checkout_date' => 'required|after:checkin_date',
 
-        ],[
-            'user_id.required' => 'Please Select a User !',
-            'room_id.required' => 'Please Select a Room !',
-            'checkin_date.required' => 'Please Select a date for check in !',
-            'checkout_date.required' => 'Please Select a date for check out !',
-            'total_adults.required' => 'Please enter a number of adults !',
-            'total_children.required' => 'Please enter a number of Children !',
-        ]);
+        ], [
+                'user_id.required' => 'Please Select a User !',
+                'room_id.required' => 'Please Select a Room !',
+                'checkin_date.required' => 'Please Select a date for check in !',
+                'checkout_date.required' => 'Please Select a date for check out !',
+            ]);
         Booking::create([
             'user_id' => $request->user_id,
             'room_id' => $request->room_id,
             'checkin_date' => $request->checkin_date,
             'checkout_date' => $request->checkout_date,
-            'total_adults' => $request->total_adults,
-            'total_children' => $request->total_children,
+
         ]);
+        $room->update([
+            'available' => 0,
+        ]);
+        // dd($room->update([
+        //     'available' => 0,
+        // ]));
+
+
+
+        $room->save();
+
+
+
         // return response()->json(['success' => 'Les données ont été enregistrées avec succès !']);
-        return redirect('/myLayouts/booking')->with('success','Booking has been created successfully.');
+        return redirect('/myLayouts/booking')->with('success', 'Booking has been created successfully.');
     }
 
     /**
@@ -78,7 +89,7 @@ class BookingController extends Controller
         $user = User::all();
         $room = Room::all();
         $booking = Booking::with(['user', 'room'])->find($id);
-        return view('myLayouts.booking.edit', ['user'=>$user, 'room'=>$room, 'booking'=>$booking]);
+        return view('myLayouts.booking.edit', ['user' => $user, 'room' => $room, 'booking' => $booking]);
     }
 
     /**
@@ -88,30 +99,27 @@ class BookingController extends Controller
     {
         $booking = Booking::find($id);
         $request->validate([
-            'user_id'=>'required|exists:users,id',
-            'room_id'=>'required|exists:rooms,id',
-            'checkin_date'=>'required|after_or_equal:today',
-            'checkout_date'=>'required|after:checkin_date',
-            'total_adults'=>'required|integer|min:1',
-            'total_children'=>'required|integer|min:0',
+            'user_id' => 'required|exists:users,id',
+            'room_id' => 'required|exists:rooms,id',
+            'checkin_date' => 'required|after_or_equal:today',
+            'checkout_date' => 'required|after:checkin_date',
 
-        ],[
-            'user_id.required' => 'Please Select a User !',
-            'room_id.required' => 'Please Select a Room !',
-            'checkin_date.required' => 'Please Select a date for check in !',
-            'checkout_date.required' => 'Please Select a date for check out !',
-            'total_adults.required' => 'Please enter a number of adults !',
-            'total_children.required' => 'Please enter a number of Children !',
-        ]);
+
+        ], [
+                'user_id.required' => 'Please Select a User !',
+                'room_id.required' => 'Please Select a Room !',
+                'checkin_date.required' => 'Please Select a date for check in !',
+                'checkout_date.required' => 'Please Select a date for check out !',
+
+            ]);
         $booking->update([
             'user_id' => $request->user_id,
             'room_id' => $request->room_id,
             'checkin_date' => $request->checkin_date,
             'checkout_date' => $request->checkout_date,
-            'total_adults' => $request->total_adults,
-            'total_children' => $request->total_children,
+
         ]);
-        return redirect('myLayouts/booking/'.$id.'/edit')->with('success', 'The booking has been updated successfully.');
+        return redirect('myLayouts/booking/' . $id . '/edit')->with('success', 'The booking has been updated successfully.');
 
     }
 
@@ -120,13 +128,15 @@ class BookingController extends Controller
      */
     public function destroy(string $id)
     {
+
         $booking = Booking::destroy($id);
         return redirect('myLayouts/booking')->with('success', "The booking has been deleted successfully.");
     }
 
-    public function available_rooms(Request $request, $checkin_date){
+    public function available_rooms(Request $request, $checkin_date)
+    {
         $available = DB::select("SELECT * FROM rooms WHERE id NOT IN (SELECT room_id FROM bookings WHERE
                                 '$checkin_date' BETWEEN checkin_date AND checkout_date)");
-        return response()->json(['data'=>$available]);
+        return response()->json(['data' => $available]);
     }
 }
