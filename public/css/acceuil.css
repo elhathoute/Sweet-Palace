@@ -450,3 +450,8 @@
     opacity: 0.7;
 }
 /* Gallery section end */
+
+.booking-img:hover{
+    transform: scale(2.9);
+    transition: 1s ease;
+}
