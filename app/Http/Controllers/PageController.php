@@ -90,6 +90,4 @@ class PageController extends Controller
         return view('myLayouts.availableRooms', ['available_rooms' => $available_rooms, 'rooms'=>$rooms]);
     }
 
-    
-
 }
