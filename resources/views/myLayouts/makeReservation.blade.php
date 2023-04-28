@@ -36,13 +36,13 @@
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Name</label>
-											<input class="form-control" type="text" value="{{ Auth::user()->name }}">
+											<input class="form-control" type="text" name="" value="{{ Auth::user()->name }}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Email</label>
-											<input class="form-control" type="email"value="{{ Auth::user()->email }}">
+											<input class="form-control" type="email"name="" value="{{ Auth::user()->email }}">
 										</div>
 									</div>
 								</div>
@@ -50,29 +50,29 @@
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Phone</label>
-											<input class="form-control" type="tel" value="{{ Auth::user()->mobile }}">
+											<input class="form-control" type="text" name="" value="{{ Auth::user()->mobile }}">
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Address</label>
-											<input class="form-control" type="tel" value="{{ Auth::user()->address }}">
+											<input class="form-control" type="text" name="" value="{{ Auth::user()->address }}">
 										</div>
 									</div>
-								
+
 
 								</div>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Check In</label>
-											<input class="form-control" type="date" required>
+											<input class="form-control" type="date" name="" >
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
                                             <label for="" class="form-label p-0 m-0">Check Out</label>
-											<input class="form-control" type="date" required>
+											<input class="form-control" type="date" name="" >
 										</div>
 									</div>
 								</div>
