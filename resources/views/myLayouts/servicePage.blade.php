@@ -15,34 +15,21 @@
     <section class="pt-5 pb-5">
         <div class="container">
             <div class="row">
+                
                 <div class="section-head col-sm-12">
                     <h3><span>Our </span> Services</h3>
                     <p>Our hotel offers a multitude of services to meet all your needs and make your stay as enjoyable as possible. <br>We are committed to providing exceptional service and making your visit an unforgettable experience.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_one"><i class='bx bx-spa' ></i></span>
-                        <h6>Spa, Beauty & Health</h6>
-                        <p> Relax and recharge your mind, body, and spirit at our hotel's tranquil spa.</p>
+                @foreach ($service as $s)
+                
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="item"> <span class="icon feature_box_col_four"><img src="{{asset($s->photo_icon)}}" alt=""></span>
+                            <h6 class="fw-bold " style="font-size: 18px;">{{$s->title}}</h6>
+                            <p> {{$s->description}}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_two"><i class='bx bx-restaurant' ></i></span>
-                        <h6>Restaurant</h6>
-                        <p>Treat your taste buds to a delectable dining experience at our hotel's restaurant.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_three"><i class='bx bx-swim' ></i></span>
-                        <h6>Swimming Pool</h6>
-                        <p > Cool off and unwind in our hotel's inviting swimming pool, the perfect place to relax and recharge.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="item"> <span class="icon feature_box_col_four"><i class='bx bx-party'></i></span>
-                        <h6>Business Growth</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor Aenean massa.</p>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
     </section>
