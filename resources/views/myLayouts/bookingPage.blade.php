@@ -105,22 +105,6 @@
                         <a href="{{ route('login') }}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px">Book Now</a>
                     @endif
                 </div>
-                
-                {{-- <div class="col-lg-4" style="margin: 80px auto; height: 414px; padding:30px;background-color:#e9e9dcf2;">
-                    <div class="mb-3">
-                        <label for="" class="my-2">Check-in</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="my-2">Check-out</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="my-2">Rooms</label>
-                        <input type="number" class="form-control">
-                    </div>
-                    <button type="button" class="btn btn-outline-dark my-4 w-100"> Send Booking</button>
-                </div> --}}
             </div>
         </div>
     </section>
