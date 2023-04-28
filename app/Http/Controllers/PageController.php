@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Models\Room;
 use App\Models\RoomType;
+use App\Models\Service;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mailer;
 class PageController extends Controller
 {
     public function about_us(){
@@ -17,6 +17,16 @@ class PageController extends Controller
     {
         $rooms  = Room::with('RoomType')->get();
         return view('myLayouts.roomPage', ['rooms' => $rooms]);
+    }
+    public function services()
+    {
+        $service  = Service::all();
+        return view('myLayouts.servicePage', ['service' => $service]);
+    }
+    public function gallery()
+    {
+        $gallery  = Gallery::all();
+        return view('myLayouts.galleryPage', ['gallery' => $gallery]);
     }
     public function contact_us(){
         return view('myLayouts/contactPage');
@@ -48,11 +58,10 @@ class PageController extends Controller
         $room = Room::with('RoomType')->find($id);
         return view('myLayouts.bookingPage', ['room' => $room]);
     }
-    // public function reservation(Room $room){
-    //     $room->load('RoomType');
-    //     dd($room);
-    //     return view('myLayouts.reservation', ['room' => $room]);
-    // }
+    public function reservation(string $id){
+        $room = Room::with('RoomType')->find($id);
+        return view('myLayouts.reservation', ['room' => $room]);
+    }
     public function checkAvailability(Request $request){
         $rooms  = Room::with('RoomType')->get();
         $checkin_date = $request->input('checkin_date');
@@ -60,28 +69,27 @@ class PageController extends Controller
         $total_adults = $request->input('adults');
         $total_children = $request->input('children');
 
-                        
-        $available_rooms = Room::join('room_types as rt', 'rooms.roomType_id', '=', 'rt.id')
-                            ->with('RoomType')
-                            ->whereNotIn('rooms.id', function($query) use ($checkin_date, $checkout_date) {
-                                $query->select('room_id')
-                                      ->from('bookings')
-                                      ->whereBetween('checkin_date', [$checkin_date, $checkout_date])
-                                      ->orWhereBetween('checkout_date', [$checkin_date, $checkout_date])
-                                      ->orWhere(function($query) use ($checkin_date, $checkout_date) {
-                                            $query->where('checkin_date', '<', $checkin_date)
-                                                  ->where('checkout_date', '>', $checkout_date);
-                                        });
-                            })
-                            ->where('rt.adults', '>=', $total_adults)
-                            ->where('rt.children', '>=', $total_children)
-                            ->where('rooms.available', '=', 1)
-                            ->get();
+        $available_rooms = Room::with('RoomType','bookings')
+            ->where(function($query) use ($total_adults,$total_children ){
+                $query->whereHas('RoomType', function ($subquery) use ($total_adults, $total_children) {
+                    $subquery->where('adults', '>=', $total_adults)
+                            ->where('children', '>=', $total_children);
+                });
+                })
+            ->where(function($query) use ($checkin_date, $checkout_date ){
+                $query->whereDoesntHave('bookings', function($subquery) use ($checkin_date, $checkout_date) {
+                    $subquery->whereBetween('checkin_date', [$checkin_date, $checkout_date])
+                            ->orWhereBetween('checkout_date', [$checkin_date, $checkout_date]);
+                });
+            })
+            ->where('rooms.available', '=', 1)
+            ->get();
 
-                     
-        // dd($available_rooms);      
+
+        
         return view('myLayouts.availableRooms', ['available_rooms' => $available_rooms, 'rooms'=>$rooms]);
     }
+
     
-    
+
 }
