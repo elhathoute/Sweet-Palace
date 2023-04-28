@@ -41,6 +41,7 @@
                                     @else
                                         <span class="py-1 px-2" style="background-color: #FFEA20;">Client</span>
                                     @endif
+                                    <a  href="{{url('myLayouts/users/usersRole/'.$user->id)}}" class="btn  btn-sm me-3"><i class='bx bx-edit-alt' ></i></a>
                                 </td>
 
                                 <td class="d-flex justify-content-center">

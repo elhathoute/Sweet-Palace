@@ -44,34 +44,19 @@
             <div class="swiper-pagination"></div>
     </div>
     <div class="container booking-area mb-5">
-        <form class="row">
+        <form class="row" action="{{url('available_rooms')}}" method="GET">
+            @csrf
             <div class="col-lg mb-3 mb-lg-0">
-                <input type="date" class="form-control" placeholder="Check in ">
+                <input type="date" class="form-control" placeholder="Check in " name="checkin_date">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
-                <input type="date" class="form-control" placeholder="Check Out">
+                <input type="date" class="form-control" placeholder="Check Out" name="checkout_date">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
-                <select class="form-select">
-                    <option selected>Adults</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
+                <input type="number" class="form-control" name="adults" id="adults" placeholder="Adults">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
-                <select class="form-select">
-                    <option selected>Children</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select>
+                <input type="number" class="form-control" name="children" id="children" placeholder="Children">
             </div>
             <div class="col-lg mb-3 mb-lg-0">
                 <button type="submit" class="main-btn btn btn-outline-dark rounded-2 px-lg-4 py-lg-2">Check Availability</button>

@@ -23,8 +23,10 @@
             <p class="text-center intro-text">Explore our selection of luxurious and comfortable rooms to find the perfect accommodation for your stay at our hotel.</p>
         </div>
         <div class="row gy-4 justify-content-center">
-            @if($rooms)
-                 @foreach ($rooms as $r )
+            @if($available_rooms)
+            {{-- @dd($available_rooms) --}}
+
+                 @foreach ($available_rooms as $r )
                     <div class="col-xl-4 col-md-6 col-xs-10">
                         <div class="room-card">
                             <div class="room-card__thumb">
@@ -58,7 +60,7 @@
                                             <span class="custom--badge">
                                                 Child {{$r->RoomType->children}}
                                             </span>
-                                            <a href="{{url('myLayouts/bookingPage/'.$r->id)}}" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a>
+                                            {{-- <a href="{{url('myLayouts/bookingPage/'.$r->id)}}" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -67,6 +69,8 @@
                     </div>
                 @endforeach
             @endif
+            
+            
         </div>
     </section>
     <div>

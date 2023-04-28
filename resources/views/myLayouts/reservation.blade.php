@@ -9,7 +9,7 @@
      {{-- links bootstrap  end--}}
      {{-- Icons link --}}
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Booking Room</title>
+    <title>Reservation Room</title>
     <link href="{{asset('/css/acceuil.css')}}" rel="stylesheet">
 </head>
 <body>
@@ -17,44 +17,41 @@
         @include('myLayouts.navbar')
     </div>
     <section>
-        <div class="container">
+
+        <div class="container my-4">
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-8 d-flex flex-column">
                     <div class="room-details-head d-flex justify-content-between align-items-center rounded-2" style="position: relative;top:60px; width:100%; max-width:710px;z-index:1;background-color:#e9e9dcf2; padding:28px 57px; margin:auto auto;">
                         <div class="">
-                            <h1 class="title fs-4 fw-bold">Exucutive Suite</h1>
+                            <h1 class="title fs-4 fw-bold"> {{$room->title}}</h1>
                             <div class="d-flex justify-content-center flex-wrap gap-2 fs-6">
-                                <span>Adults 2</span>
-                                <span>Child 2</span>
+                                <span>Adults {{$room->Roomtype->adults}}</span>
+                                <span>Child  {{$room->Roomtype->children}}</span>
                             </div>
                         </div>
                         <div class="">
-                            <h1 class="text-base fs-4 fw-bold">1000 Euro</h1>
+                            <h1 class="text-base fs-4 fw-bold">{{$room->Roomtype->price}} Mad</h1>
                             <span class="fs-6" style="text-align: center">/ Night</span>
                         </div>
                     </div>
                     <div class="room-detail-thumb mb-3" style="margin: auto auto;">
-                        <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/HS69JBASW4Q8.jpg"  alt="" style="width: 820px" class="img-fluid">
+                        <img src="{{asset($room->Roomtype->image_path)}}"  alt="" style="width: 820px" class="img-fluid">
                     </div>
                     <div class="room-details-nav d-flex justify-content-between gap-3" style=" margin: 12px auto;">
-                        <div>
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/HS69JBASW4Q8.jpg" alt="" style="width: 200px">
+                        @foreach ($room->Roomtype->roomTypeImgs as $item)
+                        <div style="">
+                            <img src="{{asset($item->image)}}" alt="" style="width: 200px; height:120px;" class="booking-img">
                         </div>
-                        <div>
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/MQ275AO4H29R.jpg" alt="" style="width: 200px">
-                        </div>
-                        <div>
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/roomType/YBR1FJR357BE.jpg" alt="" style="width: 200px">
-                        </div>
+                        @endforeach
+
+
                     </div>
                     <div class="room-details cardd" style="margin-top:50px;">
                         <h5 class="title fs-5 fw-bold">Description</h5>
                         <hr>
                         <div class="body">
                             <p>
-                                Each air-conditioned room here will provide you with a satellite TV, seating area and a balcony. There is also a minibar. Featuring a shower, private bathroom also comes with bathrobes and free toiletries.
-                                At Long Beach Hotel you will find a 24-hour front desk, BBQ facilities and garden. Other facilities offered at the property include meeting facilities, a shared lounge and a ticket service. The property offers
-                                free parking. The Barmiz Market Cox s Bazar is 3 km, the Himchari National Park is 8 km and the Binani Beach is 24 km away
+                                {{$room->Roomtype->detail}}
                             </p>
                         </div>
                     </div>
@@ -63,22 +60,12 @@
                         <hr>
                         <div class="body">
                             <div class="d-inline-flex flex-md-row flex-column gap-md-5 flex-wrap gap-3">
-                                <span class="me-2">
-                                    <i class='bx bx-wifi' ></i>
-                                    Unlimited Wifi
-                                </span>
-                                <span class="me-2">
-                                    <i class='bx bxs-business' ></i>
-                                    AC
-                                </span>
-                                <span class="me-2">
-                                    <i class='bx bxs-washer'></i>
-                                    Washing machine
-                                </span>
-                                <span class="me-2">
-                                    <i class='bx bx-tv' ></i>
-                                    TV
-                                </span>
+                                @foreach ($room->RoomType->amenities as $item)
+                                    <span class="me-2">
+                                        <i class='bx bx-check-double' ></i>
+                                        {{$item->name}}
+                                    </span>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -87,10 +74,12 @@
                         <hr>
                         <div class="body">
                             <div class="d-inline-flex flex-md-row flex-column gap-md-5 flex-wrap gap-3">
-                                <span class="me-2">
-                                    <i class='bx bx-check-double' ></i>
-                                    Breakfast
-                                </span>
+                                    @foreach ($room->RoomType->complements as $item)
+                                        <span class="me-2">
+                                            <i class='bx bx-check-double' ></i>
+                                            {{$item->name}}
+                                        </span>
+                                    @endforeach
                             </div>
                         </div>
                     </div>
@@ -99,14 +88,12 @@
                         <hr>
                         <div class="body">
                             <div class="d-inline-flex flex-md-row flex-column gap-md-5 flex-wrap gap-3">
-                                <span class="me-2">
-                                    <i class='bx bx-check-double' ></i>
-                                    Single
-                                </span>
-                                <span class="me-2">
-                                    <i class='bx bx-check-double' ></i>
-                                    Double
-                                </span>
+                                @foreach ($room->RoomType->beds as $item)
+                                    <span class="me-2">
+                                        <i class='bx bx-check-double' ></i>
+                                        {{$item->name}}
+                                    </span>
+                                @endforeach
                             </div>
                         </div>
                     </div>
