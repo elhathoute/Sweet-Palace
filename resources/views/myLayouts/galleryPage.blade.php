@@ -20,24 +20,14 @@
             <h3><span>Our </span> Galllery</h3>
             <p>Discover our gallery for a visual preview of our hotel and its world-class amenities.</p>
         </div>
+        {{-- @dd($gallery) --}}
+      
         <div class="row">
-            <div class="col-md-4 column">
-                <img src="https://images.pexels.com/photos/3586966/pexels-photo-3586966.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid" />
-                <img src="https://images.pexels.com/photos/2419375/pexels-photo-2419375.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
-                <img src="https://images.pexels.com/photos/2326290/pexels-photo-2326290.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
-                <img src="https://images.pexels.com/photos/3251006/pexels-photo-3251006.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
-                <img src="https://images.pexels.com/photos/1980720/pexels-photo-1980720.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
+              @foreach ($gallery as $g)
+            <div class=" d-flex justify-content-between gap-2 col-md-4 col-sm-12 column">
+                <img src="{{asset($g->pictures)}}" class="img-fluid" />
             </div>
-            <div class="col-md-4 column">
-                <img src="https://images.pexels.com/photos/3546429/pexels-photo-3546429.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid">
-                <img src="https://images.pexels.com/photos/3889868/pexels-photo-3889868.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid">
-                <img src="https://images.pexels.com/photos/2091160/pexels-photo-2091160.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid">
-                <img src="https://images.pexels.com/photos/2019546/pexels-photo-2019546.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="img-fluid">
-            </div>
-            <div class="col-md-4 column">
-                <img src="https://images.pexels.com/photos/3889868/pexels-photo-3889868.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
-                <img src="https://images.pexels.com/photos/2360569/pexels-photo-2360569.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-fluid" />
-            </div>
+        @endforeach
         </div>
     </div>
     <div>
