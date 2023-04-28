@@ -24,7 +24,6 @@
         </div>
         <div class="row gy-4 justify-content-center">
             @if($available_rooms)
-            {{-- @dd($available_rooms) --}}
 
                  @foreach ($available_rooms as $r )
                     <div class="col-xl-4 col-md-6 col-xs-10">
@@ -60,7 +59,7 @@
                                             <span class="custom--badge">
                                                 Child {{$r->RoomType->children}}
                                             </span>
-                                            {{-- <a href="{{url('myLayouts/bookingPage/'.$r->id)}}" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a> --}}
+                                            <a href="{{url('myLayouts/reservation/'.$r->id)}}" class="btn btn--base"><i class='la bx bx-detail me-2 mt-1'></i> Details</a>
                                         </div>
                                     </div>
                                 </div>
