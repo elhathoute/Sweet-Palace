@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="">
-                            <h1 class="text-base fs-4 fw-bold">{{$room->Roomtype->price}} Mad</h1>
+                            <h1 class="text-base fs-4 fw-bold">{{$room->Roomtype->price}} MAD</h1>
                             <span class="fs-6" style="text-align: center">/ Night</span>
                         </div>
                     </div>

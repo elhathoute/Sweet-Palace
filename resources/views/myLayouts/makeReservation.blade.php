@@ -25,7 +25,7 @@
 					<div class="col-md-5">
 						<div class="booking-cta">
 							<h1>Make your reservation</h1>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam numquam at</p>
+							<p>At our hotel, we pride ourselves on providing exceptional service and attention to detail. By reserving your room in advance, you can rest assured that we will have everything prepared for your arrival, from a comfortable room to personalized amenities.</p>
 						</div>
 					</div>
 					<div class="col-md-6 col-md-offset-1">

@@ -20,8 +20,8 @@
 
         <div class="container my-4">
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-8 d-flex flex-column">
-                    <div class="room-details-head d-flex justify-content-between align-items-center rounded-2" style="position: relative;top:60px; width:100%; max-width:710px;z-index:1;background-color:#e9e9dcf2; padding:28px 57px; margin:auto auto;">
+                <div class="col-lg-12 d-flex flex-column">
+                    <div class="room-details-head d-flex justify-content-between align-items-center rounded-2" style="position: relative;top:60px; width:100%; max-width:1000px;z-index:1;background-color:#e9e9dcf2; padding:28px 57px; margin:auto auto;">
                         <div class="">
                             <h1 class="title fs-4 fw-bold"> {{$room->title}}</h1>
                             <div class="d-flex justify-content-center flex-wrap gap-2 fs-6">
@@ -30,12 +30,12 @@
                             </div>
                         </div>
                         <div class="">
-                            <h1 class="text-base fs-4 fw-bold">{{$room->Roomtype->price}} Mad</h1>
+                            <h1 class="text-base fs-4 fw-bold">{{$room->Roomtype->price}} MAD</h1>
                             <span class="fs-6" style="text-align: center">/ Night</span>
                         </div>
                     </div>
                     <div class="room-detail-thumb mb-3" style="margin: auto auto;">
-                        <img src="{{asset($room->Roomtype->image_path)}}"  alt="" style="width: 820px" class="img-fluid">
+                        <img src="{{asset($room->Roomtype->image_path)}}"  alt="" style="width: 1200px; height:600px;" class="img-fluid">
                     </div>
                     <div class="room-details-nav d-flex justify-content-between gap-3" style=" margin: 12px auto;">
                         @foreach ($room->Roomtype->roomTypeImgs as $item)
@@ -98,21 +98,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4" style="margin: 80px auto; height: 414px; padding:30px;background-color:#e9e9dcf2;">
-                    <div class="mb-3">
-                        <label for="" class="my-2">Check-in</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="my-2">Check-out</label>
-                        <input type="date" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="" class="my-2">Rooms</label>
-                        <input type="number" class="form-control">
-                    </div>
-                    <button type="button" class="btn btn-outline-dark my-4 w-100"> Send Booking</button>
-                </div>
+                
+            </div>
+            <div class="mx-auto d-flex align-items-center justify-content-center my-4">
+                @if (auth()->check())
+                    <a href="{{url('/Reservation')}}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px"> Book Now</a>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px">Book Now</a>
+                @endif
             </div>
         </div>
     </section>
