@@ -34,12 +34,12 @@ Route::get('/booking', function () {
 })->name('booking');
 
 
-Route::get('/services', function () {
-    return view('myLayouts/servicePage');
-});
-Route::get('/gallery', function () {
-    return view('myLayouts/galleryPage');
-});
+// Route::get('/services', function () {
+//     return view('myLayouts/servicePage');
+// });
+// Route::get('/gallery', function () {
+//     return view('myLayouts/galleryPage');
+// });
 Route::get('/Reservation', function () {
     return view('myLayouts/makeReservation');
 });
@@ -50,10 +50,12 @@ Route::get('/dashboard', function () {
 Route::get('/about', [PageController::class, 'about_us']);
 Route::get('/rooms',[PageController::class, 'diplayRooms']);
 Route::get('/available_rooms',[PageController::class, 'checkAvailability']);
+Route::get('/services',[PageController::class, 'services']);
+Route::get('/gallery',[PageController::class, 'gallery']);
 Route::get('/contact',[PageController::class, 'contact_us'])->name('contact');
 Route::post('/save_contact_us',[PageController::class, 'save_contact_us']);
 Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'booking'])->name('bookingPage');
-// Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'reservation']);
+Route::get('myLayouts/reservation/{id}', [PageController::class, 'reservation']);
 
 Auth::routes();
 
