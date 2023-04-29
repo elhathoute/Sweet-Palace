@@ -43,11 +43,11 @@ class BookingController extends Controller
             'checkout_date' => 'required|after:checkin_date',
 
         ], [
-                'user_id.required' => 'Please Select a User !',
-                'room_id.required' => 'Please Select a Room !',
-                'checkin_date.required' => 'Please Select a date for check in !',
-                'checkout_date.required' => 'Please Select a date for check out !',
-            ]);
+            'user_id.required' => 'Please Select a User !',
+            'room_id.required' => 'Please Select a Room !',
+            'checkin_date.required' => 'Please Select a date for check in !',
+            'checkout_date.required' => 'Please Select a date for check out !',
+        ]);
         Booking::create([
             'user_id' => $request->user_id,
             'room_id' => $request->room_id,
@@ -106,12 +106,12 @@ class BookingController extends Controller
 
 
         ], [
-                'user_id.required' => 'Please Select a User !',
-                'room_id.required' => 'Please Select a Room !',
-                'checkin_date.required' => 'Please Select a date for check in !',
-                'checkout_date.required' => 'Please Select a date for check out !',
+            'user_id.required' => 'Please Select a User !',
+            'room_id.required' => 'Please Select a Room !',
+            'checkin_date.required' => 'Please Select a date for check in !',
+            'checkout_date.required' => 'Please Select a date for check out !',
 
-            ]);
+        ]);
         $booking->update([
             'user_id' => $request->user_id,
             'room_id' => $request->room_id,
@@ -128,7 +128,6 @@ class BookingController extends Controller
      */
     public function destroy(string $id)
     {
-
         $booking = Booking::destroy($id);
         return redirect('myLayouts/booking')->with('success', "The booking has been deleted successfully.");
     }
