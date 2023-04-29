@@ -26,9 +26,9 @@ use App\Http\Controllers\GalleryController;
 |
 */
 
-Route::get('/', function () {
-    return view('myLayouts/acceuil');
-});
+// Route::get('/', function () {
+//     return view('myLayouts/acceuil');
+// });
 Route::get('/booking', function () {
     return view('myLayouts/booking');
 })->name('booking');
@@ -40,13 +40,36 @@ Route::get('/booking', function () {
 // Route::get('/gallery', function () {
 //     return view('myLayouts/galleryPage');
 // });
-Route::get('/Reservation', function () {
-    return view('myLayouts/makeReservation');
+Route::get('/myLayouts/makeReservation/{room_id}',[PageController::class, 'reservation_display']);
+
+Route::middleware(['auth', 'checkUserRole'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('myLayouts/dashboard');
+    });
+    Route::resource('/myLayouts/booking', BookingController::class);
+    Route::resource('/myLayouts/staff', StaffController::class);
+    Route::resource('/myLayouts/departements', StaffDepartement::class);
+    Route::resource('/myLayouts/roomType',RoomTypeController::class);
+    Route::resource('/myLayouts/rooms',RoomController::class);
+    Route::resource('/myLayouts/admins', AdminController::class);
+    Route::resource('/myLayouts/users', UserController::class);
+    Route::resource('/myLayouts/services', ServiceController::class);
+    Route::resource('/myLayouts/gallery', GalleryController::class);
+    Route::resource('/myLayouts/amenities', AmenityController::class);
+    Route::resource('/myLayouts/complements', ComplementController::class);
+    Route::resource('/myLayouts/beds', BedController::class);
+
+    //check availabality
+    Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
+
+    //delete images
+    Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
+
 });
 
-Route::get('/dashboard', function () {
-    return view('myLayouts/dashboard');
-});
+
+Route::get('/',[PageController::class, 'acceuil']);
+
 Route::get('/about', [PageController::class, 'about_us']);
 Route::get('/rooms',[PageController::class, 'diplayRooms']);
 Route::get('/available_rooms',[PageController::class, 'checkAvailability']);
@@ -56,30 +79,11 @@ Route::get('/contact',[PageController::class, 'contact_us'])->name('contact');
 Route::post('/save_contact_us',[PageController::class, 'save_contact_us']);
 Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'booking'])->name('bookingPage');
 Route::get('myLayouts/reservation/{id}', [PageController::class, 'reservation']);
+Route::post('myLayouts/makeReservation/{room_id}', [PageController::class, 'make_reservation'])->name('bookings.make_reservation');
 
 Auth::routes();
 
-Route::get('/acceuil', function(){
-    return view('myLayouts/acceuil');
-})->name('acceuil');
-Route::resource('/myLayouts/booking', BookingController::class);
-Route::resource('/myLayouts/staff', StaffController::class);
-Route::resource('/myLayouts/departements', StaffDepartement::class);
-Route::resource('/myLayouts/roomType',RoomTypeController::class);
-Route::resource('/myLayouts/rooms',RoomController::class);
-Route::resource('/myLayouts/admins', AdminController::class);
-Route::resource('/myLayouts/users', UserController::class);
-Route::resource('/myLayouts/services', ServiceController::class);
-Route::resource('/myLayouts/gallery', GalleryController::class);
-Route::resource('/myLayouts/amenities', AmenityController::class);
-Route::resource('/myLayouts/complements', ComplementController::class);
-Route::resource('/myLayouts/beds', BedController::class);
 
-//check availabality
-Route::get('myLayouts/booking/available-rooms/{checkin_date}',[BookingController::class, 'available_rooms']);
-
-//delete images
-Route::get('myLayouts/room_type_images/delete/{id}',[RoomTypeController::class, 'destroy_image']);
 
 //change Role
 Route::match(['post','get'], '/myLayouts/users/usersRole/{id}', [UserController::class, 'changeRole'])->name('users.updateRole');
@@ -91,6 +95,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/change-password', [ProfilController::class, 'changePassword'])->name('change-password');
     Route::post('/change-password', [ProfilController::class, 'updatePassword'])->name('update-password');
     Route::match(['post', 'delete'],'/delete-account', [ProfilController::class, 'deleteAccount'])->name('user.delete');
-
 });
 
