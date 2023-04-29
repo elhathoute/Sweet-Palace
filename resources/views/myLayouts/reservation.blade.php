@@ -98,11 +98,11 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <div class="mx-auto d-flex align-items-center justify-content-center my-4">
                 @if (auth()->check())
-                    <a href="{{url('/Reservation')}}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px"> Book Now</a>
+                    <a href="{{url('myLayouts/makeReservation/'. $room->id)}}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px"> Book Now</a>
                 @else
                     <a href="{{ route('login') }}" class="btn btn-outline-dark w-50 py-3 fw-bold" style="font-size: 20px">Book Now</a>
                 @endif
