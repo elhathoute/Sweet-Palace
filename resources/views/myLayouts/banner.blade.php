@@ -48,16 +48,40 @@
             @csrf
             <div class="col-lg mb-3 mb-lg-0">
                 <input type="date" class="form-control" placeholder="Check in " name="checkin_date">
+                <div>
+                    @error('checkin_date')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
+            
             <div class="col-lg mb-3 mb-lg-0">
                 <input type="date" class="form-control" placeholder="Check Out" name="checkout_date">
+                <div>
+                    @error('checkout_date')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
+            
             <div class="col-lg mb-3 mb-lg-0">
                 <input type="number" class="form-control" name="adults" id="adults" placeholder="Adults">
+                <div>
+                    @error('adults')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
+            
             <div class="col-lg mb-3 mb-lg-0">
                 <input type="number" class="form-control" name="children" id="children" placeholder="Children">
+                <div>
+                    @error('children')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                    @enderror
+                </div>
             </div>
+            
             <div class="col-lg mb-3 mb-lg-0">
                 <button type="submit" class="main-btn btn btn-outline-dark rounded-2 px-lg-4 py-lg-2">Check Availability</button>
             </div>

@@ -21,7 +21,7 @@
     <div>
         @include('myLayouts.navbar')
     </div>
-
+      
     <div>
         @include('myLayouts.banner')
     </div>
