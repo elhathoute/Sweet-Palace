@@ -82,12 +82,12 @@
                 <div class="mb-3">
                     <label for="images" class="form-label">Gallery Images</label>
                     <input type="file" multiple name="images[]" class="form-control" id="images">
-                    <div class="d-flex justify-content-between align-items-center mt-4">
+                    <div class="d-flex flex-wrap justify-content-around align-items-center mt-4">
                             @foreach($data->roomTypeImgs as $img)
                                 <div class="imgcol{{$img->id}} ">
-                                    <img src="{{asset($img->image)}}" alt="" width="20px" height="20px">
-                                    <p class="mt-2">
-                                        <button type="button" class="btn btn-dannger btn-sm delete-image" data-image-id="{{$img->id}}" style="background-color: red;color: white;">
+                                    <img src="{{asset($img->image)}}" alt="" width="300px" height="200px">
+                                    <p class="mt-2 text-center">
+                                        <button type="button" class="btn btn-dannger btn-sm delete-image " data-image-id="{{$img->id}}" style="background-color: red;color: white;">
                                             <i class='bx bxs-trash' ></i>
                                         </button>
                                     </p>
@@ -95,7 +95,7 @@
                             @endforeach
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary my-4">Submit</button>
+                <button type="submit" class="btn btn-primary my-4 mx-auto">Submit</button>
             </form>
 
         </div>

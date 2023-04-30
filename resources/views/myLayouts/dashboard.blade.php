@@ -20,7 +20,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="{{url('/dashboard')}}">
+                    <a href="{{url('/myLayouts/dashboard')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-castle'></i>
                         </span>
@@ -29,7 +29,7 @@
                 </li>
 
                 <li>
-                    <a href="{{url('/dashboard')}}">
+                    <a href="{{url('/myLayouts/dashboard')}}">
                         <span class="icon">
                             <i class='ion-icon bx bxs-home-alt-2'></i>
                         </span>
@@ -162,9 +162,9 @@
                     <i class='ion-icon bx bx-menu' ></i>
                 </div>
 
-                
+
                 <div class=" d-flex align-items-center justify-content-center">
-                    <i class='ion-icon bx bxs-user me-2 fs-5'></i> <p class="mt-3 fs-5 me-3">{{ Auth::user()->name }}</p> 
+                    <i class='ion-icon bx bxs-user me-2 fs-5'></i> <p class="mt-3 fs-5 me-3">{{ Auth::user()->name }}</p>
                 </div>
             </div>
 
@@ -172,8 +172,8 @@
             <div class="cardBox">
                 <div class="carde">
                     <div>
-                        <div class="numbers">0</div>
-                        <div class="cardeName">Statistics</div>
+                        {{-- <div class="numbers">{{$usersCount}}</div> --}}
+                        <div class="cardeName">Customers</div>
                     </div>
 
                     <div class="iconBx">
@@ -183,8 +183,8 @@
 
                 <div class="carde">
                     <div>
-                        <div class="numbers">0</div>
-                        <div class="cardeName">Statistics</div>
+                        {{-- <div class="numbers">{{$adminsCount}}</div> --}}
+                        <div class="cardeName">Admins</div>
                     </div>
 
                     <div class="iconBx">
@@ -194,8 +194,8 @@
 
                 <div class="carde">
                     <div>
-                        <div class="numbers">0</div>
-                        <div class="cardeName">Statistics</div>
+                        {{-- <div class="numbers">{{$roomTypes}}</div> --}}
+                        <div class="cardeName">Rooms Type</div>
                     </div>
 
                     <div class="iconBx">
@@ -205,8 +205,8 @@
 
                 <div class="carde">
                     <div>
-                        <div class="numbers">0</div>
-                        <div class="cardeName">Statistics</div>
+                        {{-- <div class="numbers">{{$staff}}</div> --}}
+                        <div class="cardeName">Staff</div>
                     </div>
 
                     <div class="iconBx">
@@ -218,7 +218,7 @@
             <div class="roomType">
                 @yield('content')
              </div>
-           
+
         </div>
     </div>
     <!------------- dataTable------------>

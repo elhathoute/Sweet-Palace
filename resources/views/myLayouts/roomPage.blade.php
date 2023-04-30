@@ -39,9 +39,9 @@
                                     </h3>
                                     <h6>
                                         @if($r->available == 1)
-                                            <span class="py-1 px-2" style="background-color: #16FF00;">Available</span>
+                                            <span class="py-1 px-2" style="background-color: #98D8AA;font-size:12px;">available</span>
                                         @else
-                                            <span class="py-1 px-2" style="background-color: #ff2020;">Not Available</span>
+                                            <span class="py-1 px-2" style="background-color: #EA5455;font-size:12px;">not available</span>
                                         @endif
                                     </h6>
                                 </div>

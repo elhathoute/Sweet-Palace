@@ -25,18 +25,18 @@
             </div>
             <div class="row justify-content-between">
                 <div class="col-xl-5 col-lg-6 my-auto">
-                    <div class="about-thumb-wrapper">
-                        <div class="about-thumb">
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091c727e21653999900.jpg" alt="image">
+                    <div class="about-thumb-wrapper d-flex">
+                        <div class="about-thumb col-sm-12">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091c727e21653999900.jpg" alt="image" class="about-img">
                         </div>
-                        <div class="about-thumb">
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d240461653999901.jpg" alt="image">
+                        <div class="about-thumb col-sm-12">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d240461653999901.jpg" alt="image" class="about-img">
                         </div>
-                            <div class="about-thumb">
-                        <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d9fd3c1653999901.jpg" alt="image">
+                            <div class="about-thumb col-sm-12">
+                        <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091d9fd3c1653999901.jpg" alt="image" class="about-img">
                         </div>
-                        <div class="about-thumb">
-                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091e478d11653999902.jpg" alt="image">
+                        <div class="about-thumb col-sm-12">
+                            <img src="https://script.viserlab.com/viserhotel/assets/images/frontend/about/6296091e478d11653999902.jpg" alt="image" class="about-img">
                         </div>
                     </div>
                 </div>
@@ -45,14 +45,14 @@
                         <h2 class="sec-title text-center">
                             Welcome and Relax at Our Hotel
                         </h2>
-                        <p class="text-center fs-6">
+                        <p class="sec-body1 text-center fs-6">
                             Our hotel was founded with a simple vision: to provide our guests with an unforgettable stay experience.
                             We are committed to delivering exceptional service, superior quality, and attention to detail that will make
                             you feel at home.
                         </p>
                     </div>
 
-                    <div>
+                    <div class="sec-body2">
                         <p class="text-center">
                             Our team is made up of dedicated and passionate professionals,
                             ready to cater to all your needs and make your stay a unique and memorable experience.

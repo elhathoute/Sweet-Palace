@@ -37,7 +37,7 @@
                     <div class="room-detail-thumb mb-3" style="margin: auto auto;">
                         <img src="{{asset($room->Roomtype->image_path)}}"  alt="" style="width: 1200px; height:600px;" class="img-fluid">
                     </div>
-                    <div class="room-details-nav d-flex justify-content-between gap-3" style=" margin: 12px auto;">
+                    <div class="room-details-nav d-flex flex-wrap justify-content-between gap-3" style=" margin: 12px auto;">
                         @foreach ($room->Roomtype->roomTypeImgs as $item)
                         <div style="">
                             <img src="{{asset($item->image)}}" alt="" style="width: 200px; height:120px;" class="booking-img">

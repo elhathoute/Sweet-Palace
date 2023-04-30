@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12 text-center my-5">
                 <h6>Best Pictures Of Our Hotel</h6>
-                <h3 class="section-title">Our Gallery</h3>
+                <h3 class="section-title">Our <span class="favorite-rooms">Gallery</span> </h3>
                 <hr class="line">
             </div>
         </div>
