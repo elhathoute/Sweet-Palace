@@ -21,7 +21,8 @@
         <div class="container my-4">
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-12 d-flex flex-column">
-                    <div class="room-details-head d-flex justify-content-between align-items-center rounded-2" style="position: relative;top:60px; width:100%; max-width:1000px;z-index:1;background-color:#e9e9dcf2; padding:28px 57px; margin:auto auto;">
+                    <div class="room-details-head d-flex justify-content-between align-items-center rounded-2" style="position: relative;top:60px;width: 900px;
+                    ;z-index:1;background-color:#e9e9dcf2; padding:28px 57px; margin:auto auto;">
                         <div class="">
                             <h1 class="title fs-4 fw-bold"> {{$room->title}}</h1>
                             <div class="d-flex justify-content-center flex-wrap gap-2 fs-6">
@@ -35,15 +36,14 @@
                         </div>
                     </div>
                     <div class="room-detail-thumb mb-3" style="margin: auto auto;">
-                        <img src="{{asset($room->Roomtype->image_path)}}"  alt="" style="width: 1200px; height:600px;" class="img-fluid">
+                        <img src="{{asset($room->Roomtype->image_path)}}"  alt="" class="img-cover" style="max-width: 1000px;">
                     </div>
-                    <div class="room-details-nav d-flex justify-content-between gap-3" style=" margin: 12px auto;">
+                    <div class="room-details-nav d-flex flex-wrap justify-content-between gap-3" style=" margin: 12px auto;">
                         @foreach ($room->Roomtype->roomTypeImgs as $item)
                         <div style="">
                             <img src="{{asset($item->image)}}" alt="" style="width: 200px; height:120px;" class="booking-img">
                         </div>
                         @endforeach
-
 
                     </div>
                     <div class="room-details cardd" style="margin-top:50px;">
@@ -111,6 +111,7 @@
     <div>
         @include('myLayouts.footer')
     </div>
+
 </body>
 {{-- links bootstrap  start--}}
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
