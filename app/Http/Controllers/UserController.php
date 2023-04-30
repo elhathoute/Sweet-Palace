@@ -113,21 +113,21 @@ class UserController extends Controller
 
 
 
-    public function changeRole(Request $request,string $id){
-        // Récupérer l'utilisateur à partir de l'ID
-        $user = User::find($id);
-        // Valider la requête
-        $request->validate([
-            'role' => 'required|in:0,1',
-        ]);
+    // public function changeRole(Request $request,string $id){
+    //     // Récupérer l'utilisateur à partir de l'ID
+    //     $user = User::find($id);
+    //     // Valider la requête
+    //     $request->validate([
+    //         'role' => 'required|in:0,1',
+    //     ]);
 
-        // Mettre à jour le rôle de l'utilisateur
-        $user->role = $request->input('role');
-        $user->save();
+    //     // Mettre à jour le rôle de l'utilisateur
+    //     $user->role = $request->input('role');
+    //     $user->save();
 
-        // Rediriger vers la page d'affichage des utilisateurs avec un message de succès
-        return redirect('/myLayouts/users')->with('success', 'Le rôle de l\'utilisateur a été mis à jour avec succès.');
-    }
+    //     // Rediriger vers la page d'affichage des utilisateurs avec un message de succès
+    //     return redirect('/myLayouts/users')->with('success', 'Le rôle de l\'utilisateur a été mis à jour avec succès.');
+    // }
 
 }
 

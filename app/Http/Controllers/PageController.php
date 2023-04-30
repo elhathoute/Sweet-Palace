@@ -27,6 +27,7 @@ class PageController extends Controller
         foreach ($rooms as $key => $item) {
             
             $room = Room::find($item->id);
+            // dd($item->id);
             $availability = DB::table('bookings')->where('room_id', $room->id)->count();
         
             if($availability > 0){
@@ -177,6 +178,7 @@ class PageController extends Controller
         
             return redirect()->back()->with('message', 'Your Booking has been Added Successfully !');
         } else {
+            
             return redirect()->back()->with('message', 'Sorry ! The Room is not available in this Date ! You can select another Time for Booking');
         }
         
