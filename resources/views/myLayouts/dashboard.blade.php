@@ -83,14 +83,6 @@
                 </li>
 
                 <li>
-                    <a href="{{url('myLayouts/admins')}}">
-                        <span class="icon">
-                            <i class='ion-icon bx bx-dialpad'></i>
-                        </span>
-                        <span class="title">Admins</span>
-                    </a>
-                </li>
-                <li>
                     <a href="{{url('myLayouts/users')}}">
                         <span class="icon">
                             <i class='bx bxs-user-pin ion-icon'></i>
@@ -168,56 +160,13 @@
                 </div>
             </div>
 
-            <!-- ======================= Cards ================== -->
-            <div class="cardBox">
-                <div class="carde">
-                    <div>
-                        {{-- <div class="numbers">{{$usersCount}}</div> --}}
-                        <div class="cardeName">Customers</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="carde">
-                    <div>
-                        {{-- <div class="numbers">{{$adminsCount}}</div> --}}
-                        <div class="cardeName">Admins</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="carde">
-                    <div>
-                        {{-- <div class="numbers">{{$roomTypes}}</div> --}}
-                        <div class="cardeName">Rooms Type</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="chatbubbles-outline"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="carde">
-                    <div>
-                        {{-- <div class="numbers">{{$staff}}</div> --}}
-                        <div class="cardeName">Staff</div>
-                    </div>
-
-                    <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
-                    </div>
-                </div>
+            <div>
+                @include('myLayouts.statistics')
             </div>
 
-            <div class="roomType">
+            <div>
                 @yield('content')
-             </div>
+            </div>
 
         </div>
     </div>

@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AmenityController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ComplementController;
 use App\Http\Controllers\BedController;
 use App\Http\Controllers\PageController;
@@ -46,6 +47,7 @@ Route::middleware(['auth', 'checkUserRole'])->group(function () {
     Route::get('/dashboard', function () {
         return view('myLayouts/dashboard');
     });
+    Route::get('/myLayouts/statistics', [DashboardController::class, 'index']);
     Route::resource('/myLayouts/booking', BookingController::class);
     Route::resource('/myLayouts/staff', StaffController::class);
     Route::resource('/myLayouts/departements', StaffDepartement::class);
@@ -77,16 +79,9 @@ Route::get('/services',[PageController::class, 'services']);
 Route::get('/gallery',[PageController::class, 'gallery']);
 Route::get('/contact',[PageController::class, 'contact_us'])->name('contact');
 Route::post('/save_contact_us',[PageController::class, 'save_contact_us']);
-Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'booking'])->name('bookingPage');
-Route::get('myLayouts/reservation/{id}', [PageController::class, 'reservation']);
-Route::post('myLayouts/makeReservation/{room_id}', [PageController::class, 'make_reservation'])->name('bookings.make_reservation');
+
 
 Auth::routes();
-
-
-
-//change Role
-Route::match(['post','get'], '/myLayouts/users/usersRole/{id}', [UserController::class, 'changeRole'])->name('users.updateRole');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -95,5 +90,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/change-password', [ProfilController::class, 'changePassword'])->name('change-password');
     Route::post('/change-password', [ProfilController::class, 'updatePassword'])->name('update-password');
     Route::match(['post', 'delete'],'/delete-account', [ProfilController::class, 'deleteAccount'])->name('user.delete');
+    Route::get('myLayouts/reservation/{id}', [PageController::class, 'reservation']);
+    Route::post('myLayouts/makeReservation/{room_id}', [PageController::class, 'make_reservation'])->name('bookings.make_reservation');
 });
+Route::get('myLayouts/bookingPage/{id}', [PageController::class, 'booking'])->name('bookingPage');
 
