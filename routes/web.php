@@ -27,20 +27,12 @@ use App\Http\Controllers\GalleryController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('myLayouts/acceuil');
-// });
+
+
 Route::get('/booking', function () {
     return view('myLayouts/booking');
 })->name('booking');
 
-
-// Route::get('/services', function () {
-//     return view('myLayouts/servicePage');
-// });
-// Route::get('/gallery', function () {
-//     return view('myLayouts/galleryPage');
-// });
 Route::get('/myLayouts/makeReservation/{room_id}',[PageController::class, 'reservation_display']);
 
 Route::middleware(['auth', 'checkUserRole'])->group(function () {
